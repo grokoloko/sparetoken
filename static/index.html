@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>wdtsot — we deserve to share our tokens</title>
+  <meta name="description" content="Five hours. Five reais. Useful intelligence should be easier to access.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="wrap site-header">
+    <a class="mark" href="#top">wdtsot<i></i></a>
+    <nav class="header-links">
+      <a href="#preco">R$5 / 5h</a>
+      <a href="#terminal">Terminal</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <p class="kicker">GROK 4.6 High Fast</p>
+        <h1>we deserve to share our tokens.</h1>
+        <p class="lede">Five hours. Five reais.</p>
+        <p class="sub">As 5h são o tempo que o GROK ficou pensando — não o tempo da aba aberta, nem o que você leva digitando.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#chat">Experimentar agora</a>
+          <a class="btn btn-ghost" href="#terminal">>_ Terminal</a>
+        </div>
+        <aside class="term" aria-hidden="true">
+          <div class="term-top">
+            <span class="term-name">wdtsot</span>
+            <span class="live"></span>
+          </div>
+          <div class="term-row">
+            <span>remaining</span>
+            <span class="clock" id="hero-clock">05:00:00</span>
+          </div>
+          <div class="term-row used-row" id="used-row" hidden>
+            <span>processed</span>
+            <span id="hero-used">00:00:00</span>
+          </div>
+          <div class="line"><span class="who">you</span><p class="cmd">&gt; make this simpler</p></div>
+          <div class="line"><span class="who ai">ai</span><p class="cmd">&gt; absolutely.</p></div>
+        </aside>
+      </div>
+
+      <div class="chat" id="chat">
+        <div class="chat-top" id="clock-wrap" hidden>
+          <button class="clock-btn" id="clock-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="clock-btn-title" id="clock-btn-title">Chat 1</span>
+            <span class="clock-btn-caret" aria-hidden="true"></span>
+          </button>
+          <div class="clock-menu" id="clock-menu" hidden>
+            <ul class="clock-rows" id="clock-rows"></ul>
+            <p class="clock-foot" id="clock-foot"></p>
+            <div class="clock-acts">
+              <button type="button" id="btn-new">Novo chat</button>
+              <button type="button" id="btn-copy">Copiar link</button>
+            </div>
+          </div>
+        </div>
+        <div class="resume-sheet" id="resume-sheet" hidden>
+          <div class="resume-card">
+            <header class="resume-head">
+              <button type="button" class="resume-back" id="resume-back" aria-label="Fechar">←</button>
+              <div>
+                <p class="resume-name" id="resume-name">Chat</p>
+                <p class="resume-meta" id="resume-meta"></p>
+              </div>
+            </header>
+            <div class="resume-block">
+              <span class="resume-kicker">web</span>
+              <code class="resume-cmd" id="resume-web-cmd"></code>
+              <div class="resume-acts">
+                <button type="button" id="resume-copy-web">copiar</button>
+                <button type="button" id="resume-open-web">abrir</button>
+              </div>
+            </div>
+            <div class="resume-block">
+              <span class="resume-kicker">ssh</span>
+              <code class="resume-cmd" id="resume-ssh-cmd"></code>
+              <div class="resume-acts">
+                <button type="button" id="resume-copy-ssh">copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-log" id="log" aria-live="polite">
+          <div class="bubble sys">Comece por qualquer coisa. Uma ideia, um texto, um problema.</div>
+        </div>
+        <form class="composer" id="form">
+          <textarea id="input" rows="1" maxlength="4000" placeholder="Pergunte ou peça o que quiser..." required></textarea>
+          <button class="send" id="send" type="submit" aria-label="Enviar">→</button>
+        </form>
+        <p class="hint" id="hint">50 mensagens para experimentar</p>
+      </div>
+    </section>
+
+    <section class="wrap center" id="preco">
+      <p class="section-kicker">um produto</p>
+      <h2>5h. R$5.</h2>
+      <p class="muted">Só conta enquanto o GROK 4.6 High Fast processa a resposta.</p>
+      <article class="price-card">
+        <div class="price-top">
+          <strong>R$5</strong>
+          <span class="model">5 horas · GROK 4.6 High Fast</span>
+        </div>
+        <ul class="checks">
+          <li>digitar o prompt não desconta</li>
+          <li>aba aberta não desconta</li>
+          <li>vários chats somam no mesmo código</li>
+          <li>web ou SSH, mesma carteira</li>
+        </ul>
+        <div class="actions">
+          <button class="btn btn-primary" id="pay" type="button">Pagar R$5</button>
+          <a class="btn btn-ghost" href="#claim">Já paguei</a>
+        </div>
+        <p class="alpha" id="pay-note">Pagar abre um Pix único (fuzzy). Depois que confirmar, volte aqui em Já paguei. O código do bloco é o login das 5h.</p>
+        <noscript><p class="alpha"><a href="https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI" target="_blank" rel="noopener">Abrir pagamento R$5</a></p></noscript>
+        <p class="block-code" id="block-wrap" hidden>guarde este código: <strong id="block-code"></strong></p>
+        <form class="claim" id="claim" autocomplete="on">
+          <label for="claim-contact">e-mail ou WhatsApp</label>
+          <input id="claim-contact" name="contact" type="text" maxlength="120" placeholder="você@email.com ou 11 99999-0000">
+          <label for="claim-code">código do bloco ou link do Pix</label>
+          <input id="claim-code" name="code" type="text" maxlength="160" placeholder="wdtsot-7K2M ou o link que você pagou" autocapitalize="off" spellcheck="false">
+          <button class="btn btn-primary" type="submit">Liberar sessão</button>
+          <p class="claim-status" id="claim-status" role="status"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="wrap" id="terminal">
+      <p class="section-kicker">experiência dois</p>
+      <h2>SSH is one command away.</h2>
+      <p class="note">Use it from the browser. Or don’t. The same model, in an isolated workspace — not an open Linux shell.</p>
+      <div class="term-panel">
+        <p class="ssh">
+          <code>ssh -t agent-guest@wdtsot.shop</code>
+          <button class="copy" type="button" data-copy="ssh -t agent-guest@wdtsot.shop">copiar</button>
+        </p>
+        <p class="note">O SSH pede nome, WhatsApp e e-mail. Se ainda não pagou, mostra um Pix ainda Open. Depois de pagar, a mesma carteira das 5h do GROK 4.6 High Fast — só o tempo de processamento do modelo.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <article class="manifesto">
+        <p class="section-kicker">por quê</p>
+        <h2>um caderno, não um pitch.</h2>
+        <p>We work with AI every day. We pay for compute every month.</p>
+        <p>Some days we use everything. Some days we don’t. Either way, unused capacity disappears.</p>
+        <p>That feels wasteful.</p>
+        <p>We think useful intelligence should be easier to access, skills should be easier to share, and experimentation should be cheap.</p>
+        <p class="signature">we deserve to share.</p>
+      </article>
+    </section>
+
+    <section class="wrap" id="skills">
+      <p class="section-kicker">em breve</p>
+      <h2>skills are coming.</h2>
+      <p class="muted">Inteligências prontas para trabalhar. Combinações de prompts, contexto, ferramentas e jeito de pensar. From R$20 / 5h.</p>
+      <div class="skills">
+        <article class="skill"><span>em breve</span><strong>Brand DNA</strong><p>voz, restrições e memória de marca.</p></article>
+        <article class="skill"><span>em breve</span><strong>Landing Page Architect</strong><p>estrutura, hierarquia, copy curta.</p></article>
+        <article class="skill"><span>em breve</span><strong>Design Critic</strong><p>olhar frio para layout e tipo.</p></article>
+        <article class="skill"><span>em breve</span><strong>Image Prompt Director</strong><p>direção visual, não prompt soup.</p></article>
+        <article class="skill"><span>em breve</span><strong>Research Agent</strong><p>perguntas melhores, fontes mais limpas.</p></article>
+        <article class="skill"><span>em breve</span><strong>Content Strategist</strong><p>o que publicar, e o que calar.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap split">
+      <article>
+        <h3>Built in the open.</h3>
+        <p class="muted">The interface, session layer and skill format are designed to be inspectable, forkable and improvable. Código em <a href="https://github.com/sparetoken-shop/sparetoken">github.com/sparetoken-shop/sparetoken</a>.</p>
+      </article>
+      <article>
+        <h3>Privacy by default.</h3>
+        <p class="muted">Não vendemos conversas. Não mostramos a de um visitante para outro. Não há prompt escondido colhendo a sua chave. O contrato de privacidade vai no repo anônimo, quando ele existir de verdade.</p>
+      </article>
+    </section>
+
+    <section class="wrap final">
+      <h2>Useful intelligence should be easier to access.</h2>
+      <p>Fifty prompts in the browser. Or one SSH command, when you want the long table.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-primary" href="#chat">Experimentar agora</a>
+        <a class="btn btn-ghost" href="#terminal">>_ Terminal</a>
+      </div>
+    </section>
+
+    <section class="wrap note-final" id="experimento">
+      <p class="section-kicker">se você leu até aqui</p>
+      <h2>esperamos que este produto não te incomode.</h2>
+      <p>Ele é um experimento. Cinco reais por cinco horas de um modelo de fronteira é barato — é dado, é quase de graça. A ideia é, quando for possível e quando houver folga, compartilhar um pouco dos tokens com os amigos. Não transformar isso num negócio para escalar sem limite.</p>
+      <p>O outro eixo é compartilhar as skills próprias pela lojinha do site.</p>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <span>wdtsot · we deserve to share our tokens.</span>
+    <span>Oracle VPS · experimento aberto</span>
+  </footer>
+
+  <dialog class="pay-modal" id="pay-modal">
+    <form method="dialog" class="pay-modal-card">
+      <h3>Antes do Pix</h3>
+      <p>O link do conta.vc (fuzzy) só cobra. Ele <strong>não</strong> libera o GROK sozinho.</p>
+      <ol>
+        <li>Pague e espere o Pix confirmar.</li>
+        <li>Volte nesta página.</li>
+        <li>Clique em <strong>Já paguei</strong> com WhatsApp ou e-mail.</li>
+        <li>Guarde o código <strong>wdtsot-XXXX</strong> — é o login das 5h, na web e no SSH.</li>
+      </ol>
+      <p class="muted">Conta só o tempo que o GROK 4.6 High Fast fica gerando a resposta.</p>
+      <div class="actions">
+        <button class="btn btn-ghost" value="cancel">agora não</button>
+        <button class="btn btn-primary" value="ok" id="pay-modal-ok">entendi, abrir o Pix</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>

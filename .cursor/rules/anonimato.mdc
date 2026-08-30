@@ -1,0 +1,14 @@
+---
+description: Anonimato inviolável do sparetoken — sem nome, sem empresa, sem git pessoal
+alwaysApply: true
+---
+
+# Anonimato
+
+Este repo fala como **sparetoken**. Sem founder. Sem empresa.
+
+- Nunca push/remote em conta pessoal ou corporativa.
+- Nunca nome, handle, e-mail ou empresa do operador em arquivo que possa ficar público.
+- `PRIVACY.md` e a landing não citam quem opera.
+- Conta pública: `https://github.com/sparetoken-shop/sparetoken`.
+- Código canônico e SQLite das vendas de R$5 ficam na VPS. Não apagar.

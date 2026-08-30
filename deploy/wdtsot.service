@@ -1,0 +1,23 @@
+[Unit]
+Description=WDTSOT public MVP
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot
+Environment=WDTSOT_HOST=127.0.0.1
+Environment=WDTSOT_PORT=8787
+Environment=WDTSOT_MODEL=cursor-grok-4.6-high-fast
+Environment=WDTSOT_AGENT_BIN=/home/ubuntu/.local/bin/agent
+Environment=REAL_HOME=/home/ubuntu
+Environment=HOME=/home/ubuntu
+Environment=WDTSOT_PAY_URL=https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI
+ExecStart=/usr/bin/python3 /home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot/server.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

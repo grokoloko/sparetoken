@@ -1,0 +1,12 @@
+---
+description: SSH statusline shows the WDTSOT clock, not a dashboard
+alwaysApply: true
+---
+
+The guest SSH CLI status line is the same clock as the web button.
+
+- Canonical script: `scripts/wdtsot_statusline.py` (installed at `/opt/cursor-agent-tunnel/wdtsot_statusline.py`).
+- Data: `logs/wdtsot.json`, refreshed by `tunnel-gate.py watch`. Never query sqlite from the sandbox.
+- Copy: `código · GROK 4.6 · ctx N%` then `restante · min nesta linha · N chats · total / 5h`.
+- Do not add inbox, search, export, dollar cost, token counts, or workspace paths to the statusline.
+- Purchase code is accepted at SSH login (Nome = `wdtsot-XXXX`). Statusline only displays the already-claimed wallet.
