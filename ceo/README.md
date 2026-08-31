@@ -7,6 +7,7 @@ Quando o texto fechar, o heartbeat vira launch agent na VPS e o manifesto pode i
 | Arquivo | Papel |
 |---|---|
 | `POSTS.md` | ledger UTM (p001, p002…) |
+| `GIT.md` | só a conta sparetoken commita; VPS não dá git write |
 | `GO-LIVE.md` | o que sobe pra Oracle / o que fica no Mac |
 | `CEO.md` | **cérebro** — toda sessão começa aqui |
 | `HARNESS.md` | CI/CD mínimo + TDD + e2e; a IA não viaja |

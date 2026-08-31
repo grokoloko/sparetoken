@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Só aceita a identidade sparetoken. Tira trailer de ferramenta.
+set -euo pipefail
+msg="$1"
+ident="$(git var GIT_AUTHOR_IDENT 2>/dev/null || true)"
+if ! printf '%s' "$ident" | grep -q 'sparetoken-shop@users.noreply.github.com'; then
+  echo "commit-msg: author must be sparetoken <sparetoken-shop@users.noreply.github.com>" >&2
+  exit 1
+fi
+tmp="$(mktemp)"
+grep -v -E '^Co-authored-by: Cursor|^Co-authored-by: cursoragent' "$msg" >"$tmp" || true
+mv "$tmp" "$msg"

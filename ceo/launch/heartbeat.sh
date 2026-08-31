@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 # Pulso oficial: 23:30 America/Sao_Paulo.
 # NÃO invoca cursor-agent enquanto o login da VPS for conta pessoal.
+# NUNCA git commit / push / tag daqui. Ver ceo/GIT.md.
 set -euo pipefail
+if [[ "${1:-}" == "commit" || "${1:-}" == "push" ]]; then
+  echo "heartbeat: git write forbidden" >&2
+  exit 78
+fi
+git() {
+  echo "heartbeat: git is forbidden on the VPS pulse (ceo/GIT.md)" >&2
+  return 78
+}
 export TZ=America/Sao_Paulo
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 STAMP="$(date +%Y-%m-%dT%H:%M:%S%z)"

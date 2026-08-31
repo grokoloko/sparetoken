@@ -13,5 +13,6 @@ Antes de qualquer ferramenta, o cérebro é `ceo/CEO.md`. Depois:
 7. Se canal existir: 1 post (X+TG juntos quando der).
 8. `PROGRESS.md` com `tokens_pulso`. Referral / `?code=` não some.
 9. Sem identidade. Sem segundo Pix. Sem Zernio no dia 0 da conta.
+10. Git: `ceo/GIT.md`. Heartbeat na VPS **não commita**. Push só `sparetoken-shop`.
 
 Cursor se chama em 24h. Codex / Claude / Antigravity / MetaMuse só com `tasks/marketplace-clis.md`.

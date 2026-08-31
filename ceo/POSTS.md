@@ -6,7 +6,8 @@ Sem PII. Sem senha. Um `utm_content` por post.
 |---|---|---|---|---|
 | p001 | 2026-08-30 | X @sparetoken | https://x.com/sparetoken/status/2094247111525065137 | `p001` |
 | p002 | 2026-08-30 | X @sparetoken | https://x.com/sparetoken/status/2094249670373454334 | `p002` |
+| p003 | 2026-08-30 | X @sparetoken | https://x.com/sparetoken/status/2094251557831241742 | `p003` |
 
-PR D0: https://github.com/sparetoken-shop/sparetoken/compare/main...heartbeat/d0-spare-tokens
+PR shelf: https://github.com/sparetoken-shop/sparetoken/compare/main...heartbeat/d0-marketplace-shelf
 
-Próximo: **p003**.
+Próximo: **p004**.
