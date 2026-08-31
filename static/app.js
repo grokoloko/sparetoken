@@ -419,9 +419,52 @@ input.addEventListener("keydown", (event) => {
   }
 });
 
+const TRACK_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "code"];
+
+function captureLanding() {
+  const params = new URLSearchParams(location.search);
+  let bag = {};
+  try {
+    bag = JSON.parse(localStorage.getItem("st_utm") || "{}") || {};
+  } catch (_) {
+    bag = {};
+  }
+  TRACK_KEYS.forEach((key) => {
+    const val = params.get(key);
+    if (val) bag[key] = String(val).slice(0, 64);
+  });
+  bag.landed_at = Date.now();
+  try {
+    localStorage.setItem("st_utm", JSON.stringify(bag));
+  } catch (_) {}
+  return bag;
+}
+
+function ping(event) {
+  const bag = (() => {
+    try {
+      return JSON.parse(localStorage.getItem("st_utm") || "{}") || {};
+    } catch (_) {
+      return {};
+    }
+  })();
+  const body = { event };
+  TRACK_KEYS.forEach((key) => {
+    if (bag[key]) body[key] = bag[key];
+  });
+  fetch("/api/track", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+    keepalive: true,
+  }).catch(() => {});
+}
+
 async function openCheckout() {
   if (!payBtn) return;
   payBtn.disabled = true;
+  ping("pay_click");
   try {
     const res = await fetch("/api/pay", {
       method: "POST",
@@ -474,7 +517,10 @@ if (claimForm) {
         return;
       }
       applySession(data);
-      if (data.paid) startPaidLoop();
+      if (data.paid) {
+        ping("claim_ok");
+        startPaidLoop();
+      }
       setClaimStatus(
         data.paid
           ? `sessão liberada. ${data.remaining_clock} neste bloco.`
@@ -557,9 +603,11 @@ document.addEventListener("visibilitychange", () => {
 });
 
 const params = new URLSearchParams(location.search);
+captureLanding();
 if (params.get("code") && claimCode && !claimCode.value) {
   claimCode.value = params.get("code");
 }
+ping("visit");
 
 loadSession().then(() => {
   if (hint.dataset.paid === "1") startPaidLoop();

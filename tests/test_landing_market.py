@@ -1,4 +1,4 @@
-"""Marketplace shelf: R$5 cards, reseller names — never 'alias' on the public box."""
+"""Marketplace shelf: one R$5 card, a how-it-works rail — never 'alias'."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 HTML = (Path(__file__).resolve().parents[1] / "static" / "index.html").read_text(encoding="utf-8")
+CSS = (Path(__file__).resolve().parents[1] / "static" / "styles.css").read_text(encoding="utf-8")
 
 
 class LandingMarketTest(unittest.TestCase):
@@ -23,15 +24,35 @@ class LandingMarketTest(unittest.TestCase):
         self.assertNotIn("reseller alias", HTML.lower())
         self.assertNotIn("alias:", HTML.lower())
 
-    def test_shelf_is_marketplace_cards(self):
+    def test_shelf_is_one_buy_card_not_a_dashed_twin(self):
         self.assertIn('id="mercado"', HTML)
         self.assertIn('class="shelf"', HTML)
         self.assertIn("shelf-card", HTML)
         self.assertIn('data-reseller="fuzzy"', HTML)
-        self.assertIn("reseller", HTML.lower())
         self.assertIn("fuzzy", HTML)
+        self.assertNotIn("shelf-card-open", HTML)
+        self.assertNotIn("seu nome de reseller", HTML.lower())
+
+    def test_shelf_rail_explains_without_a_second_sku(self):
+        self.assertIn("shelf-rail", HTML)
+        self.assertIn("wdtsot-", HTML)
+        self.assertIn("?code=", HTML)
+
+    def test_experiment_is_market_and_self_evolving_agent(self):
+        blob = HTML.lower()
+        self.assertIn("self-evolving", blob)
+        self.assertIn("marketplace", blob)
 
     def test_market_section_invites(self):
-        self.assertIn("?code=", HTML)
         self.assertIn("10 links", HTML)
         self.assertIn("23:30", HTML)
+
+    def test_design_tokens_file_exists(self):
+        tokens = Path(__file__).resolve().parents[1] / "static" / "tokens.css"
+        self.assertTrue(tokens.is_file())
+        self.assertIn("--paper", tokens.read_text(encoding="utf-8"))
+        self.assertIn("tokens.css", CSS)
+
+    def test_outbound_shop_links_keep_utm_hooks(self):
+        self.assertIn("utm_source", HTML)
+        self.assertIn("data-track", HTML)

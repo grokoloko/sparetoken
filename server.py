@@ -19,6 +19,7 @@ import chat
 import clock
 import credits
 import pay
+import track
 from db import (
     append_chat_turn,
     connect,
@@ -238,12 +239,12 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         path = urlparse(self.path).path
-        if path == "/api/health":
+        if path in {"/api/health", "/health"}:
             self._json(
                 200,
                 {
                     "ok": True,
-                    "service": "wdtsot",
+                    "service": "sparetoken",
                     "model": chat.MODEL,
                     "ssh": "ssh agent-guest@wdtsot.shop",
                 },
@@ -299,6 +300,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        if path == "/api/track":
+            self._track()
+            return
         if path == "/api/pay":
             self._pay()
             return
@@ -476,6 +480,15 @@ class Handler(BaseHTTPRequestHandler):
             )
         except BrokenPipeError:
             return
+
+    def _track(self) -> None:
+        if not _allow(f"track:{self._client_ip()}", (40, 60)):
+            self._json(429, {"ok": False, "error": "calma."})
+            return
+        payload = self._read_json(2048) or {}
+        with DB_LOCK:
+            ok = track.record_event(DB, payload)
+        self._json(200 if ok else 400, {"ok": ok})
 
     def _pay(self) -> None:
         if not _allow(f"pay:{self._client_ip()}", SESSION_LIMIT):

@@ -15,7 +15,7 @@ mark        spare tokens + ponto accent
 frase       we deserve to share our tokens
 ```
 
-Marketplace = a **mesma** prateleira, não um segundo visual “crypto neon”.
+Canônico no código: `static/tokens.css`. Marketplace = a **mesma** prateleira, não um segundo visual “crypto neon”. Avatar temporário no X pode ser meme (shiba) — sem cara de operador.
 
 ## Plano (1 asset / pulso `BRAND`)
 

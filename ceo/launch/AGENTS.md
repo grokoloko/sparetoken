@@ -14,5 +14,6 @@ Antes de qualquer ferramenta, o cérebro é `ceo/CEO.md`. Depois:
 8. `PROGRESS.md` com `tokens_pulso`. Referral / `?code=` não some.
 9. Sem identidade. Sem segundo Pix. Sem Zernio no dia 0 da conta.
 10. Git: `ceo/GIT.md`. Heartbeat na VPS **não commita**. Push só `sparetoken-shop`.
+11. Quatro launchers curtos (além do heartbeat): `research` · `outreach` · `sales-watch` · `track-report`. X: `x-pulse.md`.
 
 Cursor se chama em 24h. Codex / Claude / Antigravity / MetaMuse só com `tasks/marketplace-clis.md`.

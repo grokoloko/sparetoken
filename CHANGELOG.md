@@ -9,6 +9,28 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.11] — 2026-08-31
+
+Prateleira definitiva + tracking first-party + launchers do CEO.
+
+### Added
+
+- Trilho de 3 passos abaixo do card R$5 (paga / guarda / indica)
+- `static/tokens.css` — design tokens da loja
+- `/api/track` + tabela `track_events` (`visit`, `pay_click`, `claim_ok`)
+- Launchers: research, outreach, sales-watch, track-report, x-pulse
+- Manifesto: marketplace **e** self-evolving agent
+
+### Changed
+
+- Landing: sumiu o segundo card tracejado
+- README público alinhado com o site
+- Health em `/health` e `/api/health`
+
+### Removed
+
+- Copy “seu nome de reseller” como card vazio
+
 ## [0.2.10] — 2026-08-30
 
 Prateleira. Cada R$5 é um card. fuzzy é **nome de reseller**, não alias.

@@ -10,4 +10,4 @@ Sem PII. Sem senha. Um `utm_content` por post.
 
 PR shelf: https://github.com/sparetoken-shop/sparetoken/compare/main...heartbeat/d0-marketplace-shelf
 
-Próximo: **p004**.
+Próximo: **p004** (shelf rail) · p005–p007 zoeira da implementação · wrap.

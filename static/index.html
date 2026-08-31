@@ -104,13 +104,12 @@
 
     <section class="wrap" id="mercado">
       <p class="section-kicker">marketplace</p>
-      <h2>uma prateleira. um card por bloco.</h2>
-      <p class="muted">Cada card é R$5 · 5h na mesa. Quem vende tem um <strong>nome de reseller</strong> — o primeiro na prateleira é <strong>fuzzy</strong>. Sem dono. Quem tem cota parada publica o próximo card. Quem indica usa o mesmo <code>?code=</code>.</p>
-      <p class="muted">Pra pôr o seu card: SSH + <strong>no mínimo 10 links</strong> conta.vc. Heartbeat todo dia às <strong>23:30</strong> — <a href="https://x.com/sparetoken">@sparetoken</a>.</p>
+      <h2>cinco reais na prateleira.</h2>
+      <p class="muted">Um card. Um reseller. Pix de um passo. O primeiro nome na mesa é <strong>fuzzy</strong>.</p>
 
       <div class="shelf">
         <article class="shelf-card price-card" id="preco" data-reseller="fuzzy">
-          <p class="reseller" id="reseller">reseller <strong>fuzzy</strong></p>
+          <p class="reseller" id="reseller">fuzzy</p>
           <div class="price-top">
             <strong>R$5</strong>
             <span class="model">5 horas · GROK 4.6 High Fast</span>
@@ -122,7 +121,7 @@
             <li>web ou SSH, mesma carteira</li>
           </ul>
           <div class="actions">
-            <button class="btn btn-primary" id="pay" type="button">Pagar R$5</button>
+            <button class="btn btn-primary" id="pay" type="button" data-track="pay_click">Pagar R$5</button>
             <a class="btn btn-ghost" href="#claim">Já paguei</a>
           </div>
           <p class="alpha" id="pay-note">Pix de um passo. O código do bloco é o login — e o mesmo <code>?code=</code> é o convite.</p>
@@ -137,16 +136,14 @@
             <p class="claim-status" id="claim-status" role="status"></p>
           </form>
         </article>
-
-        <article class="shelf-card shelf-card-open" aria-label="próximo card">
-          <p class="reseller">seu nome de reseller</p>
-          <div class="price-top">
-            <strong>R$5</strong>
-            <span class="model">o próximo bloco</span>
-          </div>
-          <p class="muted">SSH + 10 links na prateleira. Mesmo Pix. Mesmo SKU. O card é seu — o caixa não muda.</p>
-        </article>
       </div>
+
+      <ol class="shelf-rail">
+        <li><span>01 · paga</span><strong>Pix. R$5.</strong><p>Sem recorrência. Sem segundo caixa.</p></li>
+        <li><span>02 · guarda</span><strong>wdtsot-XXXX</strong><p>O código do bloco é o login das 5h.</p></li>
+        <li><span>03 · indica</span><strong>o mesmo ?code=</strong><p>Convite. 10% quando o amigo fecha.</p></li>
+      </ol>
+      <p class="shelf-open">Próximo card na prateleira: SSH + <strong>10 links</strong> conta.vc. Heartbeat todo dia às <strong>23:30</strong> — <a href="https://x.com/sparetoken?utm_source=shop&amp;utm_medium=web&amp;utm_campaign=shelf" data-track="out-x">@sparetoken</a>.</p>
     </section>
 
     <section class="wrap" id="terminal">
@@ -169,6 +166,7 @@
         <p>We work with AI every day. We pay for compute every month.</p>
         <p>Some days we use everything. Some days we don’t. Either way, unused capacity disappears.</p>
         <p>That feels wasteful.</p>
+        <p>The experiment has two axes: a marketplace of leftover tokens, and a self-evolving agent that ships every night at 23:30.</p>
         <p>We think useful intelligence should be easier to access, skills should be easier to share, and experimentation should be cheap.</p>
         <p class="signature">we deserve to share.</p>
       </article>
@@ -191,7 +189,7 @@
     <section class="wrap split">
       <article>
         <h3>Built in the open.</h3>
-        <p class="muted">The interface, session layer and skill format are designed to be inspectable, forkable and improvable. Código em <a href="https://github.com/sparetoken-shop/sparetoken">github.com/sparetoken-shop/sparetoken</a>.</p>
+        <p class="muted">The interface, session layer and skill format are designed to be inspectable, forkable and improvable. Código em <a href="https://github.com/sparetoken-shop/sparetoken?utm_source=shop&amp;utm_medium=web&amp;utm_campaign=home" data-track="out-gh">github.com/sparetoken-shop/sparetoken</a>.</p>
       </article>
       <article>
         <h3>Privacy by default.</h3>
@@ -212,13 +210,13 @@
       <p class="section-kicker">se você leu até aqui</p>
       <h2>esperamos que este produto não te incomode.</h2>
       <p>Ele é um experimento. Cinco reais por cinco horas de um modelo de fronteira é barato — é dado, é quase de graça. A ideia é, quando for possível e quando houver folga, compartilhar um pouco dos tokens com os amigos. Não transformar isso num negócio para escalar sem limite.</p>
-      <p>O outro eixo é o mercado: um card na prateleira, um nome de reseller, o mesmo Pix.</p>
+      <p>O outro eixo é o mercado: um card na prateleira, um nome de reseller, o mesmo Pix. E o self-evolving agent que, toda noite, tenta deixar a prateleira um pouco menos vazia.</p>
     </section>
   </main>
 
   <footer class="wrap site-footer">
     <span>spare tokens · we deserve to share our tokens.</span>
-    <span>marketplace · reseller fuzzy · <a href="https://x.com/sparetoken">@sparetoken</a> · 23:30</span>
+    <span>marketplace · reseller fuzzy · <a href="https://x.com/sparetoken?utm_source=shop&amp;utm_medium=web&amp;utm_campaign=footer" data-track="out-x">@sparetoken</a> · 23:30</span>
   </footer>
 
   <dialog class="pay-modal" id="pay-modal">

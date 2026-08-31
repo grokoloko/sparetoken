@@ -18,9 +18,11 @@ O cron na Oracle roda `launch/heartbeat.sh` (unittest + carimbo). O `cursor-agen
 08  plantar a feature do D+7
 09  UM eixo extra (SOCIAL/SEO/CRAWL/…) — ver tasks/pulses.md. Não a lista inteira.
 10  se canal existir: 1 post do ship (X+TG juntos quando os dois existirem)
-11  linha em PROGRESS.md com tokens_pulso
-12  rolar a janela
-13  próxima chamada em 24h
+11  sales-watch.sh (leitura). CELEBRATE → tweet de venda. RESTOCK → lembrar +10 no Mac
+12  track-report.sh → uma linha de visitas/cliques em PROGRESS.md
+13  linha em PROGRESS.md com tokens_pulso
+14  rolar a janela
+15  próxima chamada em 24h
 ```
 
 Se o 05 não aconteceu, não role a janela. Não “compense” com um tweet.

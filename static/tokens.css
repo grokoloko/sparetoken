@@ -1,0 +1,20 @@
+/* spare tokens — design tokens. The paper stall, not a SaaS dashboard. */
+:root {
+  --paper: #F3EEE4;
+  --paper-2: #FAF6EE;
+  --paper-3: #EBE4D6;
+  --ink: #282622;
+  --ink-soft: #5A544C;
+  --ink-faint: #8A8378;
+  --line: #D9D0C2;
+  --accent: #C96A3C;
+  --accent-deep: #A8542C;
+  --accent-wash: #F1DDD0;
+  --cream: #F7F1E8;
+  --shadow: 0 18px 40px rgba(40, 38, 34, 0.06);
+  --radius: 16px;
+  --radius-card: 22px;
+  --sans: "Figtree", "Avenir Next", "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", "Iowan Old Style", Palatino, Georgia, serif;
+  --mono: ui-monospace, "SF Mono Regular", Menlo, Consolas, monospace;
+}

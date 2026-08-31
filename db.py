@@ -101,6 +101,18 @@ CREATE TABLE IF NOT EXISTS customers (
     FOREIGN KEY (session_id) REFERENCES user_sessions(id)
 );
 
+CREATE TABLE IF NOT EXISTS track_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event TEXT NOT NULL,
+    utm_source TEXT,
+    utm_medium TEXT,
+    utm_campaign TEXT,
+    utm_content TEXT,
+    utm_term TEXT,
+    code TEXT,
+    created_at REAL NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_purchases_ref ON purchases(payment_reference);
 CREATE INDEX IF NOT EXISTS idx_purchases_session ON purchases(session_id, status);
 CREATE INDEX IF NOT EXISTS idx_identities_session ON identities(session_id);
@@ -139,6 +151,19 @@ def connect(path: Path) -> sqlite3.Connection:
         )"""
     )
     conn.execute("CREATE INDEX IF NOT EXISTS idx_chat_turns_chat ON chat_turns(chat_id, id)")
+    conn.execute(
+        """CREATE TABLE IF NOT EXISTS track_events (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            event TEXT NOT NULL,
+            utm_source TEXT,
+            utm_medium TEXT,
+            utm_campaign TEXT,
+            utm_content TEXT,
+            utm_term TEXT,
+            code TEXT,
+            created_at REAL NOT NULL
+        )"""
+    )
     conn.commit()
     return conn
 

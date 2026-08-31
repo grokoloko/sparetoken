@@ -73,3 +73,14 @@ canal: X p002 após PR
 tokens_pulso: ~normal
 ship: prateleira — card R$5, reseller name fuzzy, sem “alias” na vitrine
 ```
+
+## 2026-08-31 ~00:00 (0.2.11 shelf rail + track)
+
+```
+tokens_pulso: ~gordo (LP + track + 4 launchers + README)
+ship: um card de compra; trilho paga/guarda/indica; /api/track; github home
+```
+
+- Card tracejado saiu. Manifesto = marketplace + self-evolving agent.
+- CEO: celebrar venda no X; restock +10; postar ship.
+- Launchers: research, outreach, sales-watch, track-report.

@@ -1,6 +1,6 @@
 # Próximos 7 dias (rolante)
 
-Produto no ar: **0.2.10**. Pulso oficial **23:30** BRT. Prateleira = cards. Se atrasar, empurra o bloco — **não** some o D+7.
+Produto no ar: **0.2.11**. Pulso oficial **23:30** BRT. Um card de compra + trilho. Se atrasar, empurra o bloco — **não** some o D+7.
 
 Prioridade desta janela (leap of faith + pesquisa 30/08):
 
@@ -13,7 +13,7 @@ Prioridade desta janela (leap of faith + pesquisa 30/08):
 | Dia | Âncora | **Ship obrigatório hoje** | Pesquisa do pulso | Plantado no D+7 |
 |---|---|---|---|---|
 | D0 | 31/08 | Site + **canal público além do GitHub**. X+TG se SMS fechar; senão Bluesky hoje. Playwright local, anônimo. | Onde a galera sem token / com token sobrando se junta | 1º post do heartbeat + Zernio **depois** do warmup |
-| D1 | 01/09 | Landing: bloco skill/CLI **e** convite `?code=` (copy + âncora). Unittest do convite se já houver código | PLG de loja P2P (não cupom SaaS) | Popup pós-Pix: “manda este link” |
+| D1 | 01/09 | Agents curtos de marketing/conteúdo/viral + métrica de clique (`track-report`). Landing já tem `?code=` | Onde o p004–p007 trouxe visita | Popup pós-Pix: “manda este link” |
 | D2 | 02/09 | Schema mínimo de referral: fuzzy é o 1º indicador; 10%; teto de payout = Pix aos R$5 | Indicação em marketplaces P2P (não cupom SaaS) | Tela “seus 10 amigos” sem PII pública |
 | D3 | 03/09 | Contar indicação no sqlite (sem pagar ainda) — só atribuição a charge **fechado** | Pay-per-call vs bloco de 5h: o que não copiar | Pix de comissão quando saldo ≥ 5 |
 | D4 | 04/09 | Contrato do marketplace (skill = manifesto curto + CLI allowlist) | Agents + token incluso | Primeiro CLI extra no launch/ (Codex ou Claude), **pay.py intacto** |
