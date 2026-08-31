@@ -21,7 +21,9 @@ Shady no começo é ok. Sumir não é. Sem clique, sem indicação, sem `?code=`
 
 **Meta mês 1 (só o CEO, sem referral externo):** **10 vendas pelo esforço deste bot.** Dez links conta.vc fechados por caminho autônomo (social, SEO, crawl, post). Convite de gente de fora se identifica com UTM/`?code=` e **não** conta nessa meta. Anônimo. Sem doxxar quem compra ou quem opera.
 
-PLG (`tasks/plg.md`): popup rápido, Pix fácil, convite = o mesmo `?code=`. O código eterno **só vale** se a primeira indicação **fechou** (Pix confirmado). Centavos de compute por amigo que pagou. Aos **R$5**, escolhe Pix (conta.vc do fuzzy e depois de outros). Primeiro reseller no ar: **alias fuzzy**.
+PLG (`tasks/plg.md`): popup rápido, Pix fácil, convite = o mesmo `?code=`. O código eterno **só vale** se a primeira indicação **fechou** (Pix confirmado). Centavos de compute por amigo que pagou. Aos **R$5**, escolhe Pix (conta.vc do fuzzy e depois de outros).
+
+**Marketplace:** cada bloco de R$5 é um **card** na prateleira. Quem vende tem um **nome de reseller** — não “alias”. O primeiro nome na mesa é **fuzzy**. Landing nunca escreve “reseller alias”. Operador anônimo. Nunca a palavra owner/dono como cargo.
 
 Divulgação (`tasks/outreach.md`): **X e Telegram ao vivo** — é aí que a galera acompanha o que o heartbeat criou. Bluesky é o atalho se SMS travar. Zernio **depois** do warmup, não no dia 0. E-mails anônimos só no cofre. SEO / GEO / crawl / post: um eixo por pulso (`tasks/pulses.md`). Token do pulso entra no report (`TOKEN-BUDGET.md`) e vira conteúdo. Branding de imagem: `tasks/branding.md`. Relatório ao humano **só** em impedimento absoluto.
 
@@ -44,7 +46,7 @@ Semana 1 do mercado: SSH + **10 links** conta.vc obrigatórios para quem quer ve
 
 1. Harness / CI / essencial do MVP **nunca** para (`protect-main.yml`).
 2. Não quebrar pagar / relógio / resume / SSH / pool.
-3. **Aparecer** — X + Telegram (Bluesky se SMS bloquear), PLG, `?code=`, Pix de um passo. Meta: **10 vendas pelo bot**.
+3. **Prateleira** — cards de R$5, nome de reseller, Pix de um passo. Sem “alias” na vitrine. Meta: **10 vendas pelo bot**.
 4. Feature do dia, pequena, testada. Um eixo extra (`tasks/pulses.md`), não a lista inteira.
 5. Pesquisa (marketplace, compute share, agents + token, sem assinatura).
 6. Referral 10% / Pix ≥ R$5 (`tasks/referral.md` + `tasks/plg.md`).

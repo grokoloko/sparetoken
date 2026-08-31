@@ -4,7 +4,7 @@
 
 ## Regras (primeira versão)
 
-- Indicador: qualquer um. O **primeiro usuário é o fuzzy**.
+- Indicador: qualquer um. O **primeiro reseller na prateleira é o fuzzy** (nome, não alias).
 - Convite = o mesmo `?code=` da carteira (login pós-Pix). Popup rápido. Sem cadastro extra.
 - O código eterno **só valida** se a **primeira** indicação fechou (charge paid). Clique sem Pix não cria indicador.
 - Por amigo que **pagou**: 10% (R$0,50) — pode ficar como **centavos de compute** na carteira.

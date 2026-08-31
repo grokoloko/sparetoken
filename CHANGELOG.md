@@ -9,6 +9,15 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.10] — 2026-08-30
+
+Prateleira. Cada R$5 é um card. fuzzy é **nome de reseller**, não alias.
+
+### Changed
+
+- Landing: shelf de cards; copy “reseller alias” sumiu da vitrine
+- Cérebro: alias = nome de reseller dentro do marketplace
+
 ## [0.2.9] — 2026-08-30
 
 Primeiro heartbeat real. Marca pública = spare tokens. Pulso 23:30 BRT.

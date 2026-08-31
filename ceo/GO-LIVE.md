@@ -5,7 +5,7 @@ Sem senha neste arquivo. Cofre = `.anon-secrets/` no Mac (gitignored).
 ## Meta do primeiro heartbeat real
 
 1. Código do cérebro no GitHub (`sparetoken-shop`) — heartbeat D0 / 0.2.9.
-2. App no ar (já): https://sparetoken.shop · v**0.2.8** · `reseller alias` + `#mercado`.
+2. App no ar: https://sparetoken.shop · prateleira de cards · reseller **fuzzy** (nome, não alias).
 3. Primeiro post público além do GitHub: sessão X **@sparetoken** no Mac (Playwright). Telegram ainda em aberto.
 4. 10 vendas **pelo bot** no mês 1. Anônimo.
 

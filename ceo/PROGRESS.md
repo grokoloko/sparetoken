@@ -66,3 +66,10 @@ canal: X p002 após PR
 - Alma intacta: Pix fuzzy, `wdtsot-XXXX`, sem dono, sem segundo caixa.
 - Pesquisa: marketplace na primeira dobra, não API.
 - Cron Oracle: `heartbeat.sh` (teste + carimbo). cursor-agent da VPS **off** — login pessoal.
+
+## 2026-08-30 23:29 (0.2.10 shelf)
+
+```
+tokens_pulso: ~normal
+ship: prateleira — card R$5, reseller name fuzzy, sem “alias” na vitrine
+```

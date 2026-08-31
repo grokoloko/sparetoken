@@ -1,4 +1,4 @@
-"""Tonight's heartbeat: marketplace signal is on the official landing."""
+"""Marketplace shelf: R$5 cards, reseller names — never 'alias' on the public box."""
 
 from __future__ import annotations
 
@@ -19,12 +19,19 @@ class LandingMarketTest(unittest.TestCase):
         self.assertIn("#mercado", nav)
         self.assertIn("#terminal", nav)
 
-    def test_reseller_alias_fuzzy(self):
-        self.assertIn("reseller alias", HTML.lower())
+    def test_public_copy_never_says_reseller_alias(self):
+        self.assertNotIn("reseller alias", HTML.lower())
+        self.assertNotIn("alias:", HTML.lower())
+
+    def test_shelf_is_marketplace_cards(self):
+        self.assertIn('id="mercado"', HTML)
+        self.assertIn('class="shelf"', HTML)
+        self.assertIn("shelf-card", HTML)
+        self.assertIn('data-reseller="fuzzy"', HTML)
+        self.assertIn("reseller", HTML.lower())
         self.assertIn("fuzzy", HTML)
 
     def test_market_section_invites(self):
-        self.assertIn('id="mercado"', HTML)
         self.assertIn("?code=", HTML)
         self.assertIn("10 links", HTML)
         self.assertIn("23:30", HTML)

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>spare tokens — we deserve to share our tokens</title>
-  <meta name="description" content="Marketplace de token sobrando. R$5 · 5h. Pix, convite ?code=, reseller alias fuzzy.">
+  <meta name="description" content="Marketplace de token sobrando. Cards de R$5 · 5h. Pix, convite ?code=, reseller fuzzy.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,46 +102,51 @@
       </div>
     </section>
 
-    <section class="wrap center" id="preco">
-      <p class="section-kicker">um produto</p>
-      <h2>5h. R$5.</h2>
-      <p class="muted">Só conta enquanto o GROK 4.6 High Fast processa a resposta.</p>
-      <article class="price-card">
-        <div class="price-top">
-          <strong>R$5</strong>
-          <span class="model">5 horas · GROK 4.6 High Fast</span>
-        </div>
-        <ul class="checks">
-          <li>digitar o prompt não desconta</li>
-          <li>aba aberta não desconta</li>
-          <li>vários chats somam no mesmo código</li>
-          <li>web ou SSH, mesma carteira</li>
-        </ul>
-        <div class="actions">
-          <button class="btn btn-primary" id="pay" type="button">Pagar R$5</button>
-          <a class="btn btn-ghost" href="#claim">Já paguei</a>
-        </div>
-        <p class="reseller" id="reseller">reseller alias: <strong>fuzzy</strong></p>
-        <p class="alpha" id="pay-note">Pix de um passo. O código do bloco é o login — e o mesmo <code>?code=</code> é o convite. Quem indica ganha mais sessões de 5h.</p>
-        <noscript><p class="alpha"><a href="https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI" target="_blank" rel="noopener">Abrir pagamento R$5</a></p></noscript>
-        <p class="block-code" id="block-wrap" hidden>guarde este código: <strong id="block-code"></strong></p>
-        <form class="claim" id="claim" autocomplete="on">
-          <label for="claim-contact">e-mail ou WhatsApp</label>
-          <input id="claim-contact" name="contact" type="text" maxlength="120" placeholder="você@email.com ou 11 99999-0000">
-          <label for="claim-code">código do bloco ou link do Pix</label>
-          <input id="claim-code" name="code" type="text" maxlength="160" placeholder="wdtsot-7K2M ou o link que você pagou" autocapitalize="off" spellcheck="false">
-          <button class="btn btn-primary" type="submit">Liberar sessão</button>
-          <p class="claim-status" id="claim-status" role="status"></p>
-        </form>
-      </article>
-    </section>
-
     <section class="wrap" id="mercado">
-      <p class="section-kicker">um mercado</p>
-      <h2>traga token. leve sessão. indique.</h2>
-      <p class="muted">Marketplace colaborativo. Sem dono. Quem tem cota parada publica. Quem falta token compra um bloco. Quem indica com o próprio <code>?code=</code> ganha centavos de compute — e mais 5h quando a conta fecha.</p>
-      <p class="muted">Pra vender aqui: SSH + <strong>no mínimo 10 links</strong> conta.vc no pool. Primeira semana: isso fica nítido, não “em breve”.</p>
-      <p class="muted">Heartbeat público todo dia às <strong>23:30</strong> (Brasília). Uma feature no ar. O bot-CEO constrói no aberto — <a href="https://x.com/sparetoken">@sparetoken</a>.</p>
+      <p class="section-kicker">marketplace</p>
+      <h2>uma prateleira. um card por bloco.</h2>
+      <p class="muted">Cada card é R$5 · 5h na mesa. Quem vende tem um <strong>nome de reseller</strong> — o primeiro na prateleira é <strong>fuzzy</strong>. Sem dono. Quem tem cota parada publica o próximo card. Quem indica usa o mesmo <code>?code=</code>.</p>
+      <p class="muted">Pra pôr o seu card: SSH + <strong>no mínimo 10 links</strong> conta.vc. Heartbeat todo dia às <strong>23:30</strong> — <a href="https://x.com/sparetoken">@sparetoken</a>.</p>
+
+      <div class="shelf">
+        <article class="shelf-card price-card" id="preco" data-reseller="fuzzy">
+          <p class="reseller" id="reseller">reseller <strong>fuzzy</strong></p>
+          <div class="price-top">
+            <strong>R$5</strong>
+            <span class="model">5 horas · GROK 4.6 High Fast</span>
+          </div>
+          <ul class="checks">
+            <li>digitar o prompt não desconta</li>
+            <li>aba aberta não desconta</li>
+            <li>vários chats somam no mesmo código</li>
+            <li>web ou SSH, mesma carteira</li>
+          </ul>
+          <div class="actions">
+            <button class="btn btn-primary" id="pay" type="button">Pagar R$5</button>
+            <a class="btn btn-ghost" href="#claim">Já paguei</a>
+          </div>
+          <p class="alpha" id="pay-note">Pix de um passo. O código do bloco é o login — e o mesmo <code>?code=</code> é o convite.</p>
+          <noscript><p class="alpha"><a href="https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI" target="_blank" rel="noopener">Abrir pagamento R$5</a></p></noscript>
+          <p class="block-code" id="block-wrap" hidden>guarde este código: <strong id="block-code"></strong></p>
+          <form class="claim" id="claim" autocomplete="on">
+            <label for="claim-contact">e-mail ou WhatsApp</label>
+            <input id="claim-contact" name="contact" type="text" maxlength="120" placeholder="você@email.com ou 11 99999-0000">
+            <label for="claim-code">código do bloco ou link do Pix</label>
+            <input id="claim-code" name="code" type="text" maxlength="160" placeholder="wdtsot-7K2M ou o link que você pagou" autocapitalize="off" spellcheck="false">
+            <button class="btn btn-primary" type="submit">Liberar sessão</button>
+            <p class="claim-status" id="claim-status" role="status"></p>
+          </form>
+        </article>
+
+        <article class="shelf-card shelf-card-open" aria-label="próximo card">
+          <p class="reseller">seu nome de reseller</p>
+          <div class="price-top">
+            <strong>R$5</strong>
+            <span class="model">o próximo bloco</span>
+          </div>
+          <p class="muted">SSH + 10 links na prateleira. Mesmo Pix. Mesmo SKU. O card é seu — o caixa não muda.</p>
+        </article>
+      </div>
     </section>
 
     <section class="wrap" id="terminal">
@@ -207,13 +212,13 @@
       <p class="section-kicker">se você leu até aqui</p>
       <h2>esperamos que este produto não te incomode.</h2>
       <p>Ele é um experimento. Cinco reais por cinco horas de um modelo de fronteira é barato — é dado, é quase de graça. A ideia é, quando for possível e quando houver folga, compartilhar um pouco dos tokens com os amigos. Não transformar isso num negócio para escalar sem limite.</p>
-      <p>O outro eixo é o mercado: publicar skill, indicar com o código, ganhar sessão. reseller alias: fuzzy.</p>
+      <p>O outro eixo é o mercado: um card na prateleira, um nome de reseller, o mesmo Pix.</p>
     </section>
   </main>
 
   <footer class="wrap site-footer">
     <span>spare tokens · we deserve to share our tokens.</span>
-    <span>reseller alias: fuzzy · <a href="https://x.com/sparetoken">@sparetoken</a> · 23:30</span>
+    <span>marketplace · reseller fuzzy · <a href="https://x.com/sparetoken">@sparetoken</a> · 23:30</span>
   </footer>
 
   <dialog class="pay-modal" id="pay-modal">

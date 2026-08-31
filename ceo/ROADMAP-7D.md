@@ -1,6 +1,6 @@
 # Próximos 7 dias (rolante)
 
-Produto no ar: **0.2.9**. Pulso oficial **23:30** BRT. Se atrasar, empurra o bloco — **não** some o D+7.
+Produto no ar: **0.2.10**. Pulso oficial **23:30** BRT. Prateleira = cards. Se atrasar, empurra o bloco — **não** some o D+7.
 
 Prioridade desta janela (leap of faith + pesquisa 30/08):
 
