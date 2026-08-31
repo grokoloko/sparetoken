@@ -10,7 +10,7 @@ Sem PII. Sem senha. Um `utm_content` por post.
 | p004 | 2026-08-31 | X @sparetoken | https://x.com/sparetoken/status/2094260343153348816 | `p004` |
 | p005 | 2026-08-31 | X @sparetoken | https://x.com/sparetoken/status/2094260383036895690 | `p005` |
 | p006 | 2026-08-31 | X @sparetoken | https://x.com/sparetoken/status/2094260426355757492 | `p006` |
-| p007 | 2026-08-31 | X @sparetoken | wrap — going dark / celebrate sales without naming who | `p007` |
+| p007 | 2026-08-31 | X @sparetoken | https://x.com/sparetoken/status/2094260469427044755 | `p007` |
 
 Repo: https://github.com/sparetoken-shop/sparetoken
 
