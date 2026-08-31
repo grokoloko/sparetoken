@@ -21,3 +21,4 @@ credentials.json
 credentials.enc
 token_cache.json
 guests.jsonl
+.anon-chrome-social/

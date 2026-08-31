@@ -6,6 +6,8 @@ Live: [sparetoken.shop](https://sparetoken.shop) · alias [wdtsot.shop](https://
 
 This is a public experiment, not a SaaS pitch. We pay for compute every month. Some days we use it. Some days we don’t. Unused capacity disappears. So we sell a leftover block: **R$5 · 5 hours · Grok 4.6 High Fast**, in the browser or over SSH.
 
+Public name on the box: **spare tokens**. The phrase stays *we deserve to share our tokens.* Wallet codes stay `wdtsot-XXXX`. Heartbeat: every day 23:30 America/Sao_Paulo.
+
 Code: [github.com/sparetoken-shop/sparetoken](https://github.com/sparetoken-shop/sparetoken)
 
 ## Manifesto

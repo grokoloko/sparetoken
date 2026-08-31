@@ -7,6 +7,7 @@ Marca: https://sparetoken.shop · alias: https://wdtsot.shop.
 **Anonimato inviolável.** Sem founder público. Sem empresa. Sem push em conta pessoal. Leia `.cursor/rules/anonimato.mdc` antes de qualquer git/GitHub/Origin.
 
 1. Leia `PRIVACY.md` (o contrato de prompt e credencial). Depois `README.md` e `ROADMAP.md`.
+1b. Se for o agente-CEO / heartbeat: `ceo/CEO.md` é o cérebro. Skill de mint P2P: `.cursor/skills/conta-wdtsot-charges/SKILL.md` + `ceo/docs/CONTA-CHARGES.md`.
 2. Leia `CHANGELOG.md` + `VERSION` antes de versionar.
 3. Não quebre o que está no ar. Não invente pagamento, crédito ou URL.
 4. Não escreva exploit/PoC da superfície pública. Só fechar porta. Ver `SECURITY.md`.

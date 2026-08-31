@@ -536,11 +536,24 @@ h2 {
   left: 2px;
   top: 13px;
 }
+.reseller {
+  margin: 16px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--ink-faint);
+}
+.reseller strong {
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
 .alpha {
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   font-size: 13px;
   color: var(--ink-faint);
 }
+.alpha code { font-size: 12px; }
 .block-code {
   margin: 12px 0 0;
   font-size: 14px;
@@ -726,6 +739,7 @@ h2 {
   gap: 12px;
   flex-wrap: wrap;
 }
+.site-footer a { color: inherit; }
 
 @media (max-width: 860px) {
   .hero, .skills, .split { grid-template-columns: 1fr; }

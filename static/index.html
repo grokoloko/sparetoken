@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>wdtsot — we deserve to share our tokens</title>
-  <meta name="description" content="Five hours. Five reais. Useful intelligence should be easier to access.">
+  <title>spare tokens — we deserve to share our tokens</title>
+  <meta name="description" content="Marketplace de token sobrando. R$5 · 5h. Pix, convite ?code=, reseller alias fuzzy.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,11 +13,11 @@
 </head>
 <body>
   <header class="wrap site-header">
-    <a class="mark" href="#top">wdtsot<i></i></a>
+    <a class="mark" href="#top">spare tokens<i></i></a>
     <nav class="header-links">
+      <a href="#mercado">Mercado</a>
       <a href="#preco">R$5 / 5h</a>
       <a href="#terminal">Terminal</a>
-      <a href="#skills">Skills</a>
     </nav>
   </header>
 
@@ -34,7 +34,7 @@
         </div>
         <aside class="term" aria-hidden="true">
           <div class="term-top">
-            <span class="term-name">wdtsot</span>
+            <span class="term-name">spare tokens</span>
             <span class="live"></span>
           </div>
           <div class="term-row">
@@ -121,7 +121,8 @@
           <button class="btn btn-primary" id="pay" type="button">Pagar R$5</button>
           <a class="btn btn-ghost" href="#claim">Já paguei</a>
         </div>
-        <p class="alpha" id="pay-note">Pagar abre um Pix único (fuzzy). Depois que confirmar, volte aqui em Já paguei. O código do bloco é o login das 5h.</p>
+        <p class="reseller" id="reseller">reseller alias: <strong>fuzzy</strong></p>
+        <p class="alpha" id="pay-note">Pix de um passo. O código do bloco é o login — e o mesmo <code>?code=</code> é o convite. Quem indica ganha mais sessões de 5h.</p>
         <noscript><p class="alpha"><a href="https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI" target="_blank" rel="noopener">Abrir pagamento R$5</a></p></noscript>
         <p class="block-code" id="block-wrap" hidden>guarde este código: <strong id="block-code"></strong></p>
         <form class="claim" id="claim" autocomplete="on">
@@ -133,6 +134,14 @@
           <p class="claim-status" id="claim-status" role="status"></p>
         </form>
       </article>
+    </section>
+
+    <section class="wrap" id="mercado">
+      <p class="section-kicker">um mercado</p>
+      <h2>traga token. leve sessão. indique.</h2>
+      <p class="muted">Marketplace colaborativo. Sem dono. Quem tem cota parada publica. Quem falta token compra um bloco. Quem indica com o próprio <code>?code=</code> ganha centavos de compute — e mais 5h quando a conta fecha.</p>
+      <p class="muted">Pra vender aqui: SSH + <strong>no mínimo 10 links</strong> conta.vc no pool. Primeira semana: isso fica nítido, não “em breve”.</p>
+      <p class="muted">Heartbeat público todo dia às <strong>23:30</strong> (Brasília). Uma feature no ar. O bot-CEO constrói no aberto — <a href="https://x.com/sparetoken">@sparetoken</a>.</p>
     </section>
 
     <section class="wrap" id="terminal">
@@ -161,9 +170,9 @@
     </section>
 
     <section class="wrap" id="skills">
-      <p class="section-kicker">em breve</p>
-      <h2>skills are coming.</h2>
-      <p class="muted">Inteligências prontas para trabalhar. Combinações de prompts, contexto, ferramentas e jeito de pensar. From R$20 / 5h.</p>
+      <p class="section-kicker">prateleira</p>
+      <h2>skills are coming — e você pode pôr a sua.</h2>
+      <p class="muted">Inteligências prontas. Combinações de prompts, contexto, ferramentas. O caixa continua R$5 / 5h. Viral porque todo mundo que indica também leva sessão.</p>
       <div class="skills">
         <article class="skill"><span>em breve</span><strong>Brand DNA</strong><p>voz, restrições e memória de marca.</p></article>
         <article class="skill"><span>em breve</span><strong>Landing Page Architect</strong><p>estrutura, hierarquia, copy curta.</p></article>
@@ -198,13 +207,13 @@
       <p class="section-kicker">se você leu até aqui</p>
       <h2>esperamos que este produto não te incomode.</h2>
       <p>Ele é um experimento. Cinco reais por cinco horas de um modelo de fronteira é barato — é dado, é quase de graça. A ideia é, quando for possível e quando houver folga, compartilhar um pouco dos tokens com os amigos. Não transformar isso num negócio para escalar sem limite.</p>
-      <p>O outro eixo é compartilhar as skills próprias pela lojinha do site.</p>
+      <p>O outro eixo é o mercado: publicar skill, indicar com o código, ganhar sessão. reseller alias: fuzzy.</p>
     </section>
   </main>
 
   <footer class="wrap site-footer">
-    <span>wdtsot · we deserve to share our tokens.</span>
-    <span>Oracle VPS · experimento aberto</span>
+    <span>spare tokens · we deserve to share our tokens.</span>
+    <span>reseller alias: fuzzy · <a href="https://x.com/sparetoken">@sparetoken</a> · 23:30</span>
   </footer>
 
   <dialog class="pay-modal" id="pay-modal">

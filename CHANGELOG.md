@@ -5,17 +5,24 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
-### Added
-
-- SSH gate lista as linhas do mesmo código depois de uma queda e pergunta se retoma a de mais tempo (`s`) ou um número
-- `finalize` e o hello do túnel imprimem `ssh -t agent-guest@wdtsot.shop resume <session-id>`
-- `resume` sem id avisa que o UUID precisa ir na mesma linha
-- CI: `python3 -m unittest discover -s tests -v` em push/PR na `main`
-
 ### Planned
 
-- 0.2.9 — WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)
-- Repo Origin numa conta nova (ainda não existe URL)
+- WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)
+
+## [0.2.9] — 2026-08-30
+
+Primeiro heartbeat real. Marca pública = spare tokens. Pulso 23:30 BRT.
+
+### Added
+
+- Cérebro do CEO (`ceo/`), harness CI, ledger de posts UTM
+- Heartbeat diário 23:30 America/Sao_Paulo (`ceo/launch/heartbeat.sh`)
+- SSH gate lista as linhas do mesmo código depois de uma queda e pergunta se retoma (`s`) ou um número
+- `finalize` / hello do túnel: `ssh -t agent-guest@wdtsot.shop resume <session-id>`
+
+### Changed
+
+- Landing: nome + nav **spare tokens**; Mercado primeiro; copy do marketplace no fluxo
 
 ## [0.2.8] — 2026-08-30
 
@@ -132,7 +139,7 @@ Primeiro MVP no ar nesta VPS.
 - Landing editorial (hero, chat, preço, terminal, manifesto, skills teaser, privacy)
 - Chat anônimo: 50 prompts, cookie, SSE, `agent --mode ask`
 - Módulo de créditos + testes (5h, pause, reconnect, zero)
-- Nginx isolado para `wdtsot.shop` (default conecte.mail preservado)
+- Nginx isolado para `wdtsot.shop` (vhost default da VPS preservado)
 - `systemd` `wdtsot.service` em `127.0.0.1:8787`
 - Túnel Cloudflare quick (`cloudflared-wdtsot`) para teste HTTPS
 - Vhost também no IP `150.136.116.206` para teste sem DNS

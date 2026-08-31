@@ -12,5 +12,5 @@ Este repo fala como **sparetoken**. Sem founder. Sem empresa.
 - `PRIVACY.md` e a landing não citam quem opera.
 - Conta pública: `https://github.com/sparetoken-shop/sparetoken`.
 - Push / PR / tag: só essa conta. Nunca git pessoal ou corporativo.
-- `main` só avança com o workflow `test` verde (unittest do repo).
+- `main` só avança com unittest verde.
 - Código canônico e SQLite das vendas de R$5 ficam na VPS. Não apagar.
