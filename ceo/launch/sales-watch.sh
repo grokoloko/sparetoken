@@ -24,15 +24,16 @@ open_n = con.execute(
 closed_n = con.execute(
     "SELECT COUNT(*) FROM pay_links WHERE status IN ('closed','paid')"
 ).fetchone()[0]
+had_stamp = stamp_path.exists()
 prev = 0
-if stamp_path.exists():
+if had_stamp:
     try:
         prev = int(stamp_path.read_text().split()[0])
     except ValueError:
         prev = 0
 delta = paid - prev
-print(f"purchases_paid={paid} pay_openish={open_n} pay_closed={closed_n} delta={delta}")
-if delta > 0:
+print(f"purchases_paid={paid} pay_openish={open_n} pay_closed={closed_n} delta={delta} baseline={not had_stamp}")
+if had_stamp and delta > 0:
     print("CELEBRATE")
     flag = db.parent / "celebrate.txt"
     flag.write_text(
@@ -40,6 +41,8 @@ if delta > 0:
         "https://sparetoken.shop/?utm_source=x&utm_medium=social&utm_campaign=sold&utm_content=sale\n",
         encoding="utf-8",
     )
+elif not had_stamp:
+    print("baseline set — will not celebrate history")
 if open_n < 3:
     print("RESTOCK +10")
     (db.parent / "restock.flag").write_text("mint +10 on local Chrome\n", encoding="utf-8")
