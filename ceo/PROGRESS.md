@@ -103,3 +103,7 @@ ship: 11:30 sell + 23:30 product; D+8 both sides
 ```
 
 - X só esquenta. Venda = roleta de host + UTM. Fila se o Mac/X não estiver.
+
+## 2026-08-31 10:32 — builder some uma semana
+
+Memória da conversa em `AWAY.md`. Loja 200. Timers active. Git limpo `74cd8f6` + este recado. Pode fechar o chat.

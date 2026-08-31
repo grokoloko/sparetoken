@@ -1,31 +1,25 @@
-# Go-live — o que está de pé / o que vai pra Oracle
+# Go-live — estado real (31/08)
 
-Sem senha neste arquivo. Cofre = `.anon-secrets/` no Mac (gitignored).
+Sem senha neste arquivo. Cofre X = `.anon-secrets/` no Mac (gitignored). Semana do builder: `AWAY.md`.
 
-## Meta do primeiro heartbeat real
+## No ar
 
-1. Código do cérebro no GitHub (`sparetoken-shop`) — heartbeat D0 / 0.2.9.
-2. App no ar: https://sparetoken.shop · **um** card R$5 + trilho paga/guarda/indica · reseller **fuzzy**.
-3. Primeiro post público além do GitHub: sessão X **@sparetoken** no Mac (Playwright). Telegram ainda em aberto.
-4. 10 vendas **pelo bot** no mês 1. Anônimo.
+1. App: https://sparetoken.shop · SKU R$5 · 5h · fuzzy · código do bloco = login
+2. Repo: https://github.com/sparetoken-shop/sparetoken
+3. X: @sparetoken (warmup). Telegram: depois
+4. Meta mês 1: **10 vendas pelo bot**
 
-## Onde cada coisa mora
+## Onde mora
 
-| Recurso | Onde | Vai pra Oracle? |
-|---|---|---|
-| Loja / pagar / relógio | VPS canônica `…/wdtsot` = live | Já está. `server.py`/`pay.py` **iguais** ao Mac |
-| Cérebro `ceo/` | só Mac, uncommitted | **Sim, no próximo passo** — scp/git, sem cron até “publique” |
-| Sessão X + senha + cookies | `.anon-secrets/` + `.anon-chrome-social/` | **Não.** Cookie na VPS queima a conta |
-| Mint conta.vc | Chrome local + skill | **Não.** VPS só lê `/pay/fuzzy` |
-| Primeiro post | Mac, sessão salva | Oracle **manda** o texto; o post sai daqui |
-| Zernio | ainda não | Depois do warmup (3–7d), aí sim API na VPS |
+| Recurso | Onde |
+|---|---|
+| Loja / pagar / relógio | VPS `…/wdtsot` · `wdtsot.service` |
+| Cérebro `ceo/` | git + VPS (cópia). Cron **ligado** |
+| 11:30 venda | `sparetoken-sell.timer` → `sell.sh` |
+| 23:30 produto | `sparetoken-heartbeat.timer` → `heartbeat.sh` |
+| Sessão X | Mac only. VPS escreve fila |
+| Mint conta.vc | Chrome local + skill. VPS só lê |
 
-## Próximo passo (Oracle) — ainda sem commit do CEO
+## Proibido na VPS
 
-1. Copiar `ceo/` (e só isso) pro guest/workspace da VPS, **leitura + dry `launch/heartbeat.sh`**.
-2. Não ligar cron. Não levar `.anon-*`. Não tocar `pay.py`.
-3. Voltar ao Mac: commit da orientação do CEO no `sparetoken-shop` quando o humano mandar.
-
-## Primeiro post (quando o pulso for real)
-
-Texto do ship + `https://sparetoken.shop/?utm_source=x&utm_medium=social&utm_campaign=heartbeat`. Sem PII. Sem “dono”. Sem segundo Pix. Sem Zernio no dia 0 desta conta.
+Git write. Cookie de X. Zernio. Segundo gateway. Playwright em `charge/new`.
