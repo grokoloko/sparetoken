@@ -24,8 +24,14 @@ GUEST_INFO_JSON="{}"
 IS_RESUME=0
 
 if [[ -n "$TUNNEL_CMD" ]]; then
+  if [[ "$TUNNEL_CMD" == "resume" || "$TUNNEL_CMD" == "resume " ]]; then
+    echo "Falta o id na MESMA linha (Enter no meio quebra o comando):" >&2
+    echo "  ssh -t agent-guest@wdtsot.shop resume <session-id|chat-uuid>" >&2
+    exit 1
+  fi
   if ! RESUME_TOKEN="$(/usr/bin/python3 "$RESOLVE_BIN" --parse "$TUNNEL_CMD")"; then
-    echo "Comando invalido. Use: ssh -t agent-guest@HOST resume <session-id|chat-uuid>" >&2
+    echo "Comando invalido. Use UMA linha:" >&2
+    echo "  ssh -t agent-guest@wdtsot.shop resume <session-id|chat-uuid>" >&2
     exit 1
   fi
 else
@@ -217,7 +223,20 @@ with (root / "guests.jsonl").open("a", encoding="utf-8") as f:
 PY
 fi
 
-if ! /usr/bin/python3 "$GATE_BIN" gate; then
+set +e
+/usr/bin/python3 "$GATE_BIN" gate
+gate_rc=$?
+set -e
+if [[ "$gate_rc" -eq 10 ]]; then
+  token="$(tr -d '[:space:]' < "${LOG_DIR}/resume-to.txt" 2>/dev/null || true)"
+  if [[ -z "$token" ]]; then
+    echo "wdtsot: resume pedido sem token." >&2
+    exit 4
+  fi
+  echo "wdtsot: retomando ${token} (esta pasta nova fica vazia)." >&2
+  exec "$0" resume "$token"
+fi
+if [[ "$gate_rc" -ne 0 ]]; then
   echo "wdtsot: sessao nao liberada." >&2
   exit 4
 fi
@@ -243,6 +262,7 @@ echo "Sessao: ${SESSION_ID}"
 if [[ "$IS_RESUME" -eq 1 ]]; then
   echo "Retomando conversa: ${CHAT_ID:-anterior}"
 fi
+echo "Para voltar: ssh -t agent-guest@wdtsot.shop resume ${SESSION_ID}"
 echo "Workspace isolado: ${WORKSPACE}"
 echo "So esta pasta e gravavel. Ctrl+C / exit para sair."
 echo

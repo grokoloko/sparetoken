@@ -5,6 +5,13 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Added
+
+- SSH gate lista as linhas do mesmo código depois de uma queda e pergunta se retoma a de mais tempo (`s`) ou um número
+- `finalize` e o hello do túnel imprimem `ssh -t agent-guest@wdtsot.shop resume <session-id>`
+- `resume` sem id avisa que o UUID precisa ir na mesma linha
+- CI: `python3 -m unittest discover -s tests -v` em push/PR na `main`
+
 ### Planned
 
 - 0.2.9 — WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)

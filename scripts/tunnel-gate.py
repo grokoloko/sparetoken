@@ -29,6 +29,19 @@ from db import (  # noqa: E402
 import clock  # noqa: E402
 import pay  # noqa: E402
 
+_HERE = Path(__file__).resolve().parent
+for _p in (_HERE, _HERE / "scripts"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+from ssh_resume import (  # noqa: E402
+    RESUME_RECONNECT,
+    heaviest_ssh_line,
+    parse_resume_answer,
+    prior_ssh_lines,
+    resume_token,
+    ssh_resume_cmd,
+)
+
 DB_PATH = Path(os.environ.get("WDTSOT_DATA", str(WDTSOT / "data"))) / "wdtsot.sqlite"
 
 
@@ -44,6 +57,35 @@ def _ask(label: str) -> str:
     if not line:
         sys.exit(1)
     return line.strip()
+
+
+def _ask_optional(label: str) -> str:
+    sys.stderr.write(label)
+    sys.stderr.flush()
+    line = sys.stdin.readline()
+    return (line or "").strip()
+
+
+def _offer_prior_resume(snap: dict, ssh_id: str) -> str | None:
+    """If the guest picks an older SSH line, return its resume token."""
+    if os.environ.get("IS_RESUME") == "1":
+        return None
+    prior = prior_ssh_lines(snap.get("chats") or [], ssh_id)
+    if not prior:
+        return None
+    _err("linhas SSH deste código (sem esta conexão):")
+    for i, chat in enumerate(prior, 1):
+        token = resume_token(str(chat.get("id") or ""))
+        used = chat.get("used_clock") or ""
+        _err(f"  {i}) {token}  {used}")
+    heavy = heaviest_ssh_line(prior)
+    heavy_tok = resume_token(str((heavy or {}).get("id") or ""))
+    _err(f"s = retomar a de mais tempo ({heavy_tok})")
+    _err("número = essa linha · n = sessão nova")
+    chosen = parse_resume_answer(_ask_optional("retomar? [s/N] "), prior)
+    if not chosen:
+        return None
+    return resume_token(str(chosen.get("id") or ""))
 
 
 def _conn():
@@ -121,6 +163,10 @@ def _show_ready(snap: dict) -> None:
     _err(f"processamento restante: {snap['remaining_clock']}  (usado {snap['used_clock']})")
     _err(f"voltar: {snap['return_url']}")
     _err("Guarde o código. WhatsApp + código retomam as 5h na web e no SSH.")
+    ssh_id = os.environ.get("SESSION_ID") or ""
+    cmd = ssh_resume_cmd(ssh_id)
+    if cmd:
+        _err(f"se cair a conexão: {cmd}")
     _err("")
 
 
@@ -190,6 +236,15 @@ def gate() -> int:
 
     if name and not pay.normalize_block_code(name):
         set_session_name(conn, session_id, name)
+    snap = clock.snapshot(conn, session_id)
+    token = _offer_prior_resume(snap, ssh_id)
+    if token:
+        logs = Path(os.environ.get("LOG_DIR") or ".")
+        logs.mkdir(parents=True, exist_ok=True)
+        (logs / "resume-to.txt").write_text(token + "\n", encoding="utf-8")
+        _err(f"ok. retomando {token}")
+        _err(ssh_resume_cmd(token))
+        return RESUME_RECONNECT
     clock.open_chat(
         conn,
         session_id,
@@ -268,6 +323,10 @@ def finalize() -> int:
         f"wdtsot {snap.get('block_code') or ''}: {snap['used_clock']} processadas · "
         f"restam {snap['remaining_clock']}"
     )
+    ssh_id = os.environ.get("SESSION_ID") or data.get("line_label") or ""
+    cmd = ssh_resume_cmd(str(ssh_id))
+    if cmd:
+        _err(f"para voltar a esta linha: {cmd}")
     return 0
 
 
