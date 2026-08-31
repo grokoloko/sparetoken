@@ -84,3 +84,23 @@ ship: um card de compra; trilho paga/guarda/indica; /api/track; github home
 - Card tracejado saiu. Manifesto = marketplace + self-evolving agent.
 - CEO: celebrar venda no X; restock +10; postar ship.
 - Launchers: research, outreach, sales-watch, track-report.
+
+## 2026-08-31 ~00:20 (0.2.12 code-only + heading)
+
+```
+tokens_pulso: ~normal
+ship: SSH/web login = wdtsot-XXXX; heading rotativo; IDEAS.md
+```
+
+- Sem nome/WA/email no gate. Horas e `?code=` no mesmo código.
+- CEO: dado é a voz da razão. Builder = leap of faith. Meta do mês + report de audiência no pulso.
+
+## 2026-08-31 ~00:20 (0.2.12 code-only + heading)
+
+```
+tokens_pulso: ~normal
+ship: SSH/web login = wdtsot-XXXX; heading rotativo; IDEAS.md
+```
+
+- Sem nome/WA/email no gate. Horas e `?code=` no mesmo código.
+- CEO: dado é a voz da razão. Builder = leap of faith. Meta do mês + report de audiência no pulso.

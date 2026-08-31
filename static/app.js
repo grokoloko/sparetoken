@@ -8,7 +8,6 @@ const payNote = document.getElementById("pay-note");
 const blockWrap = document.getElementById("block-wrap");
 const blockCode = document.getElementById("block-code");
 const claimForm = document.getElementById("claim");
-const claimContact = document.getElementById("claim-contact");
 const claimCode = document.getElementById("claim-code");
 const claimStatus = document.getElementById("claim-status");
 const clock = document.getElementById("hero-clock") || document.querySelector(".clock");
@@ -507,7 +506,6 @@ if (claimForm) {
         credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contact: claimContact ? claimContact.value.trim() : "",
           code: claimCode ? claimCode.value.trim() : "",
         }),
       });
@@ -601,6 +599,32 @@ document.addEventListener("visibilitychange", () => {
   if (hint.dataset.paid !== "1") return;
   if (document.visibilityState === "visible") clockAction("tick");
 });
+
+(function rotateHero() {
+  const el = document.getElementById("hero-line-text");
+  if (!el) return;
+  let lines = [];
+  try {
+    lines = JSON.parse(el.getAttribute("data-lines") || "[]");
+  } catch (_) {
+    lines = [];
+  }
+  if (lines.length < 2) return;
+  let i = 0;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  setInterval(() => {
+    i = (i + 1) % lines.length;
+    if (reduced) {
+      el.textContent = lines[i];
+      return;
+    }
+    el.classList.add("is-out");
+    setTimeout(() => {
+      el.textContent = lines[i];
+      el.classList.remove("is-out");
+    }, 1100);
+  }, 9000);
+})();
 
 const params = new URLSearchParams(location.search);
 captureLanding();

@@ -7,7 +7,22 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 ### Planned
 
-- WhatsApp libera token; fechar chat anônimo e SSH sem senha (ver ROADMAP)
+- Fechar chat anônimo e SSH sem senha (ver ROADMAP)
+
+## [0.2.12] — 2026-08-31
+
+Login = código do bloco. Heading rotativo. Bucket de ideias.
+
+### Added
+
+- `scripts/collect_guest.py` — SSH pede só `wdtsot-XXXX` / link / resume
+- Heading com 3 frases e fade lento
+- `ceo/IDEAS.md` + `ceo/tasks/copy.md`
+
+### Changed
+
+- Gate SSH e claim da web sem nome, e-mail ou WhatsApp
+- CEO: dado > builder; reportar audiência no pulso; Telegram depois
 
 ## [0.2.11] — 2026-08-31
 

@@ -20,11 +20,8 @@ sys.path.insert(0, str(WDTSOT))
 from db import (  # noqa: E402
     connect,
     get_or_create_session,
-    identity_session,
     purchase_by_reference,
     session_by_id,
-    set_session_name,
-    upsert_customer,
 )
 import clock  # noqa: E402
 import pay  # noqa: E402
@@ -116,18 +113,6 @@ def _resolve_session(conn, guest: dict, ssh_id: str):
             found = session_by_id(conn, str(purchase["session_id"]))
             if found:
                 return found
-    for kind, key in (("whatsapp", "whatsapp"), ("email", "email")):
-        value = (guest.get(key) or "").strip()
-        if not value:
-            continue
-        try:
-            parsed = pay.parse_contact(value)
-        except pay.PayError:
-            continue
-        if parsed and parsed[0] == kind:
-            found = identity_session(conn, parsed[0], parsed[1])
-            if found:
-                return found
     return get_or_create_session(conn, ssh_id, ssh_id)
 
 
@@ -162,7 +147,7 @@ def _show_ready(snap: dict) -> None:
     _err(f"GROK 4.6 High Fast · código {snap.get('block_code') or '—'}")
     _err(f"processamento restante: {snap['remaining_clock']}  (usado {snap['used_clock']})")
     _err(f"voltar: {snap['return_url']}")
-    _err("Guarde o código. WhatsApp + código retomam as 5h na web e no SSH.")
+    _err("Guarde o código do bloco. Ele é o login das 5h na web, no SSH e no convite ?code=.")
     ssh_id = os.environ.get("SESSION_ID") or ""
     cmd = ssh_resume_cmd(ssh_id)
     if cmd:
@@ -187,16 +172,12 @@ def gate() -> int:
     conn = _conn()
     row = _resolve_session(conn, guest, ssh_id)
     session_id = str(row["id"])
-    name = (guest.get("name") or "").strip()
-    if name and not pay.normalize_block_code(name):
-        set_session_name(conn, session_id, name)
-        upsert_customer(conn, session_id, name)
-    contact = (guest.get("whatsapp") or guest.get("email") or "").strip()
-    incoming_code = pay.normalize_block_code(guest.get("block_code") or guest.get("name"))
+    incoming_code = pay.normalize_block_code(guest.get("block_code") or "")
+    incoming_url = (guest.get("pay_url") or "").strip() or None
 
     snap = clock.snapshot(conn, session_id)
-    if snap["remaining_seconds"] <= 0 and incoming_code:
-        result = _try_claim(conn, session_id, contact, incoming_code, None)
+    if snap["remaining_seconds"] <= 0 and (incoming_code or incoming_url):
+        result = _try_claim(conn, session_id, "", incoming_code, incoming_url)
         if result and result.get("paid"):
             session_id = result["session_id"]
             snap = clock.snapshot(conn, session_id)
@@ -225,17 +206,15 @@ def gate() -> int:
             else:
                 _err("cole o código do bloco (wdtsot-XXXX) ou escreva sim.")
                 continue
-            result = _try_claim(conn, session_id, contact, code, url)
+            result = _try_claim(conn, session_id, "", code, url)
             if result and result.get("paid"):
                 session_id = result["session_id"]
                 snap = clock.snapshot(conn, session_id)
                 break
         else:
-            _err("não confirmei o Pix. saia e tente de novo com o mesmo WhatsApp ou o código.")
+            _err("não confirmei o Pix. saia e tente de novo com o código do bloco.")
             return 4
 
-    if name and not pay.normalize_block_code(name):
-        set_session_name(conn, session_id, name)
     snap = clock.snapshot(conn, session_id)
     token = _offer_prior_resume(snap, ssh_id)
     if token:

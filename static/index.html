@@ -25,7 +25,9 @@
     <section class="wrap hero">
       <div>
         <p class="kicker">GROK 4.6 High Fast</p>
-        <h1>we deserve to share our tokens.</h1>
+        <h1 class="hero-line" id="hero-line" aria-live="polite">
+          <span class="hero-line-text" id="hero-line-text" data-lines='["we deserve to share our tokens.","R$0,50 por 30 minutos de processamento de IA.","pay quickly with PIX and get going."]'>we deserve to share our tokens.</span>
+        </h1>
         <p class="lede">Five hours. Five reais.</p>
         <p class="sub">As 5h são o tempo que o GROK ficou pensando — não o tempo da aba aberta, nem o que você leva digitando.</p>
         <div class="actions">
@@ -128,8 +130,6 @@
           <noscript><p class="alpha"><a href="https://app.conta.vc/pay/fuzzy/c/Y_saWXtd37j5fMagI3klioK95ZyBd9iSMMB-ggzI5gI" target="_blank" rel="noopener">Abrir pagamento R$5</a></p></noscript>
           <p class="block-code" id="block-wrap" hidden>guarde este código: <strong id="block-code"></strong></p>
           <form class="claim" id="claim" autocomplete="on">
-            <label for="claim-contact">e-mail ou WhatsApp</label>
-            <input id="claim-contact" name="contact" type="text" maxlength="120" placeholder="você@email.com ou 11 99999-0000">
             <label for="claim-code">código do bloco ou link do Pix</label>
             <input id="claim-code" name="code" type="text" maxlength="160" placeholder="wdtsot-7K2M ou o link que você pagou" autocapitalize="off" spellcheck="false">
             <button class="btn btn-primary" type="submit">Liberar sessão</button>
@@ -155,7 +155,7 @@
           <code>ssh -t agent-guest@wdtsot.shop</code>
           <button class="copy" type="button" data-copy="ssh -t agent-guest@wdtsot.shop">copiar</button>
         </p>
-        <p class="note">O SSH pede nome, WhatsApp e e-mail. Se ainda não pagou, mostra um Pix ainda Open. Depois de pagar, a mesma carteira das 5h do GROK 4.6 High Fast — só o tempo de processamento do modelo.</p>
+        <p class="note">O SSH pede só o código do bloco (wdtsot-XXXX). Se ainda não pagou, mostra um Pix Open. Depois de pagar, a mesma carteira das 5h — só o tempo de processamento do modelo. O mesmo código indica um amigo.</p>
       </div>
     </section>
 
@@ -226,7 +226,7 @@
       <ol>
         <li>Pague e espere o Pix confirmar.</li>
         <li>Volte nesta página.</li>
-        <li>Clique em <strong>Já paguei</strong> com WhatsApp ou e-mail.</li>
+        <li>Clique em <strong>Já paguei</strong> com o código <strong>wdtsot-XXXX</strong>.</li>
         <li>Guarde o código <strong>wdtsot-XXXX</strong> — é o login das 5h, na web e no SSH.</li>
       </ol>
       <p class="muted">Conta só o tempo que o GROK 4.6 High Fast fica gerando a resposta.</p>

@@ -404,7 +404,7 @@ def claim(
     block = normalize_block_code(code)
     url = None if block else (normalize_pay_url(pay_url) or normalize_pay_url(code))
     if not parsed and not block and not url:
-        raise PayError("informe e-mail, WhatsApp, o código do bloco ou o link do Pix")
+        raise PayError("informe o código do bloco (wdtsot-XXXX) ou o link do Pix")
 
     identified = identity_session(conn, parsed[0], parsed[1]) if parsed else None
     if identified and _remaining(conn, identified["id"]) > 0:

@@ -233,9 +233,7 @@ record = {
   "remote_user": "agent-guest",
   "isolation": "bubblewrap+sandbox",
   "guest": {
-    "name": guest.get("name", ""),
-    "whatsapp": guest.get("whatsapp", ""),
-    "email": guest.get("email", ""),
+    "block_code": guest.get("block_code", ""),
   },
 }
 
@@ -243,15 +241,13 @@ logs = Path(os.environ["LOG_DIR"])
 logs.joinpath("session.start.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
 logs.joinpath("session.log").write_text(
     f"start model={record['model']} peer={record['ssh_client']} "
-    f"guest={record['guest']['name']!r} wa={record['guest']['whatsapp']} email={record['guest']['email']}\n"
+    f"guest_block={record['guest'].get('block_code') or '-'}\n"
 )
 
 guest_row = {
     "session_id": record["session_id"],
     "started_at": record["started_at"],
-    "name": record["guest"]["name"],
-    "whatsapp": record["guest"]["whatsapp"],
-    "email": record["guest"]["email"],
+    "block_code": record["guest"].get("block_code", ""),
     "ssh_client": record["ssh_client"],
     "model": record["model"],
 }

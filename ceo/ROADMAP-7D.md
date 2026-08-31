@@ -1,6 +1,6 @@
 # Próximos 7 dias (rolante)
 
-Produto no ar: **0.2.11**. Pulso oficial **23:30** BRT. Um card de compra + trilho. Se atrasar, empurra o bloco — **não** some o D+7.
+Produto no ar: **0.2.12**. Pulso oficial **23:30** BRT. Login = código do bloco. Se atrasar, empurra o bloco — **não** some o D+7.
 
 Prioridade desta janela (leap of faith + pesquisa 30/08):
 

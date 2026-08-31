@@ -56,3 +56,14 @@ class LandingMarketTest(unittest.TestCase):
     def test_outbound_shop_links_keep_utm_hooks(self):
         self.assertIn("utm_source", HTML)
         self.assertIn("data-track", HTML)
+
+    def test_claim_is_code_only_not_civil_identity(self):
+        self.assertNotIn("claim-contact", HTML)
+        self.assertNotIn("whatsapp", HTML.lower())
+        self.assertNotIn("e-mail ou", HTML.lower())
+
+    def test_hero_rotates_three_lines(self):
+        self.assertIn("we deserve to share our tokens", HTML.lower())
+        self.assertIn("r$0,50 por 30 minutos", HTML.lower())
+        self.assertIn("pay quickly with pix and get going", HTML.lower())
+        self.assertIn("hero-line", HTML)
