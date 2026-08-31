@@ -1,0 +1,11 @@
+[Unit]
+Description=sparetoken CEO sell pulse (publish or queue)
+After=network.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot
+Environment=TZ=America/Sao_Paulo
+ExecStart=/home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot/ceo/launch/sell.sh

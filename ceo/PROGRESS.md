@@ -95,12 +95,11 @@ ship: SSH/web login = wdtsot-XXXX; heading rotativo; IDEAS.md
 - Sem nome/WA/email no gate. Horas e `?code=` no mesmo código.
 - CEO: dado é a voz da razão. Builder = leap of faith. Meta do mês + report de audiência no pulso.
 
-## 2026-08-31 ~00:20 (0.2.12 code-only + heading)
+## 2026-08-31 manhã (0.2.13 dual pulse)
 
 ```
-tokens_pulso: ~normal
-ship: SSH/web login = wdtsot-XXXX; heading rotativo; IDEAS.md
+tokens_pulso: ~magro
+ship: 11:30 sell + 23:30 product; D+8 both sides
 ```
 
-- Sem nome/WA/email no gate. Horas e `?code=` no mesmo código.
-- CEO: dado é a voz da razão. Builder = leap of faith. Meta do mês + report de audiência no pulso.
+- X só esquenta. Venda = roleta de host + UTM. Fila se o Mac/X não estiver.

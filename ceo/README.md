@@ -25,6 +25,8 @@ Quando o texto fechar, o heartbeat vira launch agent na VPS e o manifesto pode i
 | `docs/CONTA-CHARGES.md` | skill que multiplica fuzzy — alma do caixa |
 | `tasks/referral.md` | 10%, Pix ≥ R$5, 1º = fuzzy |
 | `tasks/marketplace-clis.md` | Codex, Claude, Antigravity, MetaMuse |
+| `HEARTBEAT.md` | **11:30 venda + 23:30 produto** |
+| `VENUES.md` `SALES-7D.md` `QUEUE.md` | roleta, 7 dias de venda, fila |
 | `IDEAS.md` | bucket oficial — copy, LP exclusiva, blog; dado decide |
 | `tasks/copy.md` | heading rotativo + regra de matar frase |
 | `launch/` | heartbeat + 4 loops: research, outreach, sales-watch, track-report · `x-pulse.md` |

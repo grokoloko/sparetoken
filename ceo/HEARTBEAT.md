@@ -1,36 +1,47 @@
-# Heartbeat v1 — um pulso / 24h às **23:30** (America/Sao_Paulo)
+# Dois pulsos oficiais (America/Sao_Paulo)
 
-Horário oficial. Uma feature no ar por pulso. **Pulso sem feature = pulso morto.**
+Isto não é diário de pesquisa. **Pesquisa sem publicação = pulso morto de venda.**  
+Feature sem teste = pulso morto de produto.
 
-O cron na Oracle roda `launch/heartbeat.sh` (unittest + carimbo). O `cursor-agent` da VPS **não** entra no cron enquanto o login for conta pessoal — alma = anônimo. O cérebro vive; o CLI pessoal não.
+| Relógio | Nome | Função | Script | Timer UTC |
+|---|---|---|---|---|
+| **11:30** | venda | 1 publicação real fora do X (blog, comentário, lista) + plantar D+8 de MKT | `launch/sell.sh` | `14:30` |
+| **23:30** | produto | 1 feature no ar + unittest + plantar D+8 de produto | `launch/heartbeat.sh` | `02:30` |
 
-## Loop
+X **esquenta**. Um post calmo do ship ou da venda. Sem reply farm. Sem Zernio até o warmup. Telegram depois.
+
+Todo fim de pulso planta **duas** tarefas no D+8: uma de produto, uma de venda. A janela nunca acaba num recado.
+
+## 11:30 — venda
 
 ```
-00  cron 23:30 America/Sao_Paulo → launch/heartbeat.sh
-01  ler CEO.md (modelo de pensamento) + PAYMENT.md + docs/CONTA-CHARGES.md
-02  mostrar ROADMAP-7D.md inteiro
-03  20–40 min de pesquisa → append RESEARCH.md
-04  TDD no essencial (unittest). Vermelho = para
-05  SHIP a feature do dia D (obrigatório)
-06  re-rodar testes; se jornada: rascunho em tests/e2e/
-07  deploy se verde e se não toca o pagar
-08  plantar a feature do D+7
-09  UM eixo extra (SOCIAL/SEO/CRAWL/…) — ver tasks/pulses.md. Não a lista inteira.
-10  se canal existir: 1 post do ship no X (Telegram depois; não espera)
-11  sales-watch.sh (leitura). CELEBRATE → tweet de venda. RESTOCK → lembrar +10 no Mac
-12  track-report.sh → visitas, pay_click, claims, UTMs. Postar o recorte se for verdade
-13  linha em PROGRESS.md com tokens_pulso + audiência/tráfego/conteúdo (sem PII)
-14  rolar a janela
-15  próxima chamada em 24h
+00  cron 11:30 → launch/sell.sh
+01  ler CEO.md + VENUES.md + QUEUE.md
+02  track-report (visitas / pay_click)
+03  UM destino da roleta (não a lista inteira)
+04  publicar o link com UTM  OU  gravar a fila se o canal pediu humano
+05  RESEARCH.md: o que saiu, não o que “poderia”
+06  plantar D+8 de vendas em SALES-7D.md
+07  PROGRESS.md (sem PII)
 ```
 
-Se o 05 não aconteceu, não role a janela. Não “compense” com um tweet.
+Sem publicação e sem linha na fila = falhou. Anotar não conta.
 
-## Janela rolante
+## 23:30 — produto
 
-Sempre 7 dias à frente. D+7 = próxima ideia. Referral e mint de charges não saem da mesa até existirem.
+```
+00  cron 23:30 → launch/heartbeat.sh
+01  CEO.md + PAYMENT.md + HARNESS.md
+02  ROADMAP-7D.md
+03  unittest. Vermelho = para
+04  SHIP
+05  plantar D+8 de produto
+06  sales-watch. CELEBRATE → texto na fila (X no Mac)
+07  track-report + tokens_pulso
+```
 
-## Launch (quando publicar)
+## Como o robô se aprimora
 
-`launch/heartbeat.sh` + `launch/AGENTS.md`. Depois um agent por CLI, mesmo cérebro (`CEO.md`).
+O pulso da manhã **usa** a pesquisa: escolhe o próximo lugar em `VENUES.md`, publica, vê se `utm_content` gerou `visit` no dia seguinte. Se não gerou, mata o canal e planta outro. O da noite faz o mesmo com feature. D+8 é obrigatório nos dois.
+
+Fila: `ceo/QUEUE.md` + `data/sell-queue.jsonl` na VPS. Mac acorda → esgota X. VPS nunca segura cookie de X.

@@ -1,6 +1,6 @@
 # Próximos 7 dias (rolante)
 
-Produto no ar: **0.2.12**. Pulso oficial **23:30** BRT. Login = código do bloco. Se atrasar, empurra o bloco — **não** some o D+7.
+Produto no ar: **0.2.13**. Pulsos **11:30 venda** e **23:30 produto**. Login = código do bloco. Cada pulso planta D+8. Sem publicação de manhã, a venda falhou — **não** some o D+8.
 
 Prioridade desta janela (leap of faith + pesquisa 30/08):
 

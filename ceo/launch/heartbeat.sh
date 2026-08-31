@@ -32,7 +32,7 @@ mkdir -p "$(dirname "$LOG")"
   echo
   echo "PULSE_OK $STAMP"
   echo "AGENT: off (VPS cursor-agent is a personal login — anonymity lock)"
-  echo "NEXT: 23:30 tomorrow. Ship one feature. Do not touch pay.py."
+  echo "NEXT: 23:30 tomorrow = one feature. 11:30 = one publish. Do not touch pay.py."
 } | tee -a "$LOG"
 
 exit 0

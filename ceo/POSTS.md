@@ -14,4 +14,6 @@ Sem PII. Sem senha. Um `utm_content` por post.
 
 Repo: https://github.com/sparetoken-shop/sparetoken
 
-Próximo: **p008** no ship de segunda, ou **s001** se `sales-watch` imprimir CELEBRATE (venda nova, não baseline).
+| p008 | 2026-08-31 | X @sparetoken | dual pulse 11:30 sell / 23:30 ship | `p008` |
+
+Próximo: **p009** no ship da noite, ou **s001** se `sales-watch` imprimir CELEBRATE.

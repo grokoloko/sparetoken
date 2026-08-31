@@ -1,6 +1,6 @@
 # Launch agent — heartbeat
 
-Scratch. Sem cron.
+Dois crons: **11:30 sell.sh** · **23:30 heartbeat.sh**. Sem git write.
 
 Antes de qualquer ferramenta, o cérebro é `ceo/CEO.md`. Depois:
 

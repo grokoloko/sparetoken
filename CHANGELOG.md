@@ -9,6 +9,19 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.13] — 2026-08-31
+
+Dois pulsos: 11:30 vende, 23:30 shippa. D+8 dos dois lados.
+
+### Added
+
+- `launch/sell.sh` + timer 11:30 BRT
+- `VENUES.md` `SALES-7D.md` `QUEUE.md`
+
+### Changed
+
+- X fica no warmup. Prospecção = um host por manhã, não reply.
+
 ## [0.2.12] — 2026-08-31
 
 Login = código do bloco. Heading rotativo. Bucket de ideias.

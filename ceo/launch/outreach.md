@@ -2,7 +2,7 @@
 
 Loop: um texto, um link com UTM, um canal. Viral sem doxxar.
 
-1. Canal vivo = X @sparetoken. Telegram quando a sessão existir. Sem Zernio no warmup.
+1. X = warmup (1 post de ship/venda). Prospecção = `VENUES.md` às 11:30. Telegram depois. Sem Zernio no warmup.
 2. Copiar o ship do dia (uma frase). Link canônico:
    `https://sparetoken.shop/?utm_source=x&utm_medium=social&utm_campaign=heartbeat&utm_content=pNNN`
 3. Sem nome. Sem “eu fiz”. Sem print de comprador. Sem handle de operador.
