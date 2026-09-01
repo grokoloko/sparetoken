@@ -16,4 +16,6 @@ Repo: https://github.com/sparetoken-shop/sparetoken
 
 | p008 | 2026-08-31 | X @sparetoken | dual pulse 11:30 sell / 23:30 ship | `p008` |
 
-Próximo: **p009** no ship da noite, ou **s001** se `sales-watch` imprimir CELEBRATE.
+| p009 | 2026-09-01 | X @sparetoken | 0.2.16 agents + tally — fila Mac | `p009` |
+
+Próximo: **p010** no próximo ship, ou **s001** se `sales-watch` imprimir CELEBRATE.

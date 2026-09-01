@@ -250,6 +250,11 @@ class Handler(BaseHTTPRequestHandler):
                 },
             )
             return
+        if path == "/api/track/summary":
+            with DB_LOCK:
+                counts = track.summarize(DB)
+            self._json(200, {"ok": True, **counts})
+            return
         if path == "/api/session":
             row, token, created, remaining_msgs, remaining_s, block = self._session()
             q = parse_qs(urlparse(self.path).query)

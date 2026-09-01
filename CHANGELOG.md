@@ -9,6 +9,20 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.16] — 2026-09-01
+
+D1: agents curtos no mesmo chat + métrica de clique na prateleira.
+
+### Added
+
+- Três briefs vivos (post / prateleira / convite) que caem no chat — mesmo SKU R$5
+- `GET /api/track/summary` — visitas, cliques Pix, claims; sem código, sem UTM
+- FAQ + JSON-LD para o crawler citar o preço sem inventar plano
+
+### Changed
+
+- Landing mostra o tally público quando o summary responde
+
 ## [0.2.15] — 2026-08-31
 
 O projeto vivo vai pro GitHub. Correção de agente sem push = pulso morto.

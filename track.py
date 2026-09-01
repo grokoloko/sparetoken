@@ -52,3 +52,12 @@ def record_event(conn, raw: dict[str, Any] | None) -> bool:
     )
     conn.commit()
     return True
+
+
+def summarize(conn) -> dict[str, int]:
+    """Public click tallies. Counts only — no codes, no UTM, no PII."""
+    out = {event: 0 for event in ("visit", "pay_click", "claim_ok")}
+    for event, n in conn.execute("SELECT event, COUNT(*) FROM track_events GROUP BY 1"):
+        if event in out:
+            out[event] = int(n)
+    return out

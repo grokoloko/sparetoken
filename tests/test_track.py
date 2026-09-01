@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from db import connect
-from track import ALLOWED_EVENTS, record_event, sanitize_payload
+from track import ALLOWED_EVENTS, record_event, sanitize_payload, summarize
 
 
 class TrackSanitizeTest(unittest.TestCase):
@@ -69,3 +69,15 @@ class TrackDbTest(unittest.TestCase):
         self.assertTrue(ok)
         stored = dict(self.conn.execute("SELECT * FROM track_events").fetchone())
         self.assertNotIn("hi@x.com", str(stored))
+
+    def test_summarize_is_counts_only_no_code_no_utm(self):
+        record_event(self.conn, {"event": "visit", "utm_source": "x", "utm_content": "p004", "code": "wdtsot-7K2M"})
+        record_event(self.conn, {"event": "visit", "utm_source": "x", "utm_content": "p006"})
+        record_event(self.conn, {"event": "pay_click"})
+        tallies = summarize(self.conn)
+        self.assertEqual(tallies, {"visit": 2, "pay_click": 1, "claim_ok": 0})
+        self.assertEqual(set(tallies), {"visit", "pay_click", "claim_ok"})
+        blob = str(tallies)
+        self.assertNotIn("wdtsot-", blob)
+        self.assertNotIn("p004", blob)
+        self.assertNotIn("@", blob)

@@ -107,3 +107,19 @@ ship: 11:30 sell + 23:30 product; D+8 both sides
 ## 2026-08-31 10:32 — builder some uma semana
 
 Memória da conversa em `AWAY.md`. Loja 200. Timers active. Git limpo `74cd8f6` + este recado. Pode fechar o chat.
+
+## 2026-09-01 23:30 (heartbeat D1)
+
+```
+tokens_pulso: ~normal
+tokens_mês_est: pulso produto 01/09
+ship: 0.2.16 — 3 agents curtos no mesmo chat + /api/track/summary na prateleira
+canal: x fila p009 (Mac)
+audiência: 61 visit · 1 pay_click · 0 claim_ok · p004/p006=1 · p005/p007=0 · p008=10
+```
+
+- Unittest verde antes do ship. `pay.py` intacto. Sem segundo caixa.
+- Tally público é contagem. Sem código. Sem UTM dump.
+- D+8 plantado: se pay_click continuar 1, briefs saem da dobra.
+- sales-watch: sem sqlite neste tree; leitura na VPS não imprimiu CELEBRATE neste pulso.
+- X não twitta daqui. p009 na fila.

@@ -4,8 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>spare tokens — we deserve to share our tokens</title>
-  <meta name="description" content="Marketplace de token sobrando. Cards de R$5 · 5h. Pix, convite ?code=, reseller fuzzy.">
+  <meta name="description" content="Marketplace de token sobrando. Cards de R$5 · 5h. Pix, convite ?code=, reseller fuzzy. Sem mensalidade.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quanto custa um bloco na spare tokens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "R$5 por 5 horas de GROK 4.6 High Fast. Pix de um passo. Sem mensalidade. Sem segundo caixa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como entro depois de pagar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O código do bloco (wdtsot-XXXX) é o login na web e no SSH. O mesmo ?code= indica um amigo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que os agents curtos fazem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Post curto, texto de prateleira e gancho de convite. Abrem no mesmo chat. O caixa continua R$5 / 5h."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -18,6 +50,7 @@
       <a href="#mercado">Mercado</a>
       <a href="#preco">R$5 / 5h</a>
       <a href="#terminal">Terminal</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
@@ -144,6 +177,11 @@
         <li><span>03 · indica</span><strong>o mesmo ?code=</strong><p>Convite. 10% quando o amigo fecha.</p></li>
       </ol>
       <p class="shelf-open">Próximo card na prateleira: SSH + <strong>10 links</strong> conta.vc. Heartbeat todo dia às <strong>23:30</strong> — <a href="https://x.com/sparetoken?utm_source=shop&amp;utm_medium=web&amp;utm_campaign=shelf" data-track="out-x">@sparetoken</a>.</p>
+      <p class="pulso-tally" id="pulso-tally" hidden>
+        <span data-tally="visit">0</span> visitas
+        · <span data-tally="pay_click">0</span> cliques Pix
+        · <span data-tally="claim_ok">0</span> blocos liberados
+      </p>
     </section>
 
     <section class="wrap" id="terminal">
@@ -174,16 +212,41 @@
 
     <section class="wrap" id="skills">
       <p class="section-kicker">prateleira</p>
-      <h2>skills are coming — e você pode pôr a sua.</h2>
-      <p class="muted">Inteligências prontas. Combinações de prompts, contexto, ferramentas. O caixa continua R$5 / 5h. Viral porque todo mundo que indica também leva sessão.</p>
+      <h2>três agents curtos — o resto ainda chega.</h2>
+      <p class="muted">Clique e o brief cai no mesmo chat. O caixa continua R$5 / 5h. Sem segundo preço.</p>
       <div class="skills">
-        <article class="skill"><span>em breve</span><strong>Brand DNA</strong><p>voz, restrições e memória de marca.</p></article>
-        <article class="skill"><span>em breve</span><strong>Landing Page Architect</strong><p>estrutura, hierarquia, copy curta.</p></article>
+        <article class="skill is-live" data-brief="mkt" role="button" tabindex="0">
+          <span>usar no chat</span>
+          <strong>Post curto</strong>
+          <p>280 caracteres. R$5 / 5h. Sem cara. O mesmo Pix.</p>
+        </article>
+        <article class="skill is-live" data-brief="copy" role="button" tabindex="0">
+          <span>usar no chat</span>
+          <strong>Texto de prateleira</strong>
+          <p>Um parágrafo. Token sobrando. Sem assinatura.</p>
+        </article>
+        <article class="skill is-live" data-brief="viral" role="button" tabindex="0">
+          <span>usar no chat</span>
+          <strong>Gancho de convite</strong>
+          <p>3 linhas. O convite é o mesmo ?code=.</p>
+        </article>
         <article class="skill"><span>em breve</span><strong>Design Critic</strong><p>olhar frio para layout e tipo.</p></article>
         <article class="skill"><span>em breve</span><strong>Image Prompt Director</strong><p>direção visual, não prompt soup.</p></article>
         <article class="skill"><span>em breve</span><strong>Research Agent</strong><p>perguntas melhores, fontes mais limpas.</p></article>
-        <article class="skill"><span>em breve</span><strong>Content Strategist</strong><p>o que publicar, e o que calar.</p></article>
       </div>
+    </section>
+
+    <section class="wrap faq" id="faq">
+      <p class="section-kicker">perguntas</p>
+      <h2>sem cadastro. sem plano.</h2>
+      <dl>
+        <dt>Quanto custa?</dt>
+        <dd>R$5 por 5 horas de GROK 4.6 High Fast. Pix de um passo. Sem mensalidade.</dd>
+        <dt>Como entro depois de pagar?</dt>
+        <dd>O código do bloco (<code>wdtsot-XXXX</code>) é o login na web e no SSH. O mesmo <code>?code=</code> indica um amigo.</dd>
+        <dt>O que os agents curtos fazem?</dt>
+        <dd>Post, prateleira, convite. Abrem no chat de cima. Não abrem outro caixa.</dd>
+      </dl>
     </section>
 
     <section class="wrap split">

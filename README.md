@@ -63,7 +63,7 @@ Not in this repo: the live SQLite, guest session folders, payment links, WhatsAp
 - Anonymous web chat still opens with a cookie. Paid resume can store prompt text so you can come back. We do not publish that diary and we do not show visitor A the chat of visitor B.
 - SSH `agent-guest` is a ForceCommand into a bubblewrap + Cursor sandbox. It is **not** a login shell.
 - The guest process uses the host Cursor login to call the model. That is the shared token. Unrelated host secrets must **not** be mounted into the guest. See PRIVACY.md.
-- First-party tracking (`/api/track`) stores `visit` / `pay_click` / `claim_ok` plus UTMs. No email. No phone. No third-party pixel.
+- First-party tracking (`/api/track`) stores `visit` / `pay_click` / `claim_ok` plus UTMs. `GET /api/track/summary` is public counts only. No email. No phone. No third-party pixel.
 - SSH and the web claim ask for the **block code** (or the Pix link). Not a name. Not a phone. Not an email.
 
 ## License

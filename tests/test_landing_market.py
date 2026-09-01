@@ -5,8 +5,11 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-HTML = (Path(__file__).resolve().parents[1] / "static" / "index.html").read_text(encoding="utf-8")
-CSS = (Path(__file__).resolve().parents[1] / "static" / "styles.css").read_text(encoding="utf-8")
+ROOT = Path(__file__).resolve().parents[1]
+HTML = (ROOT / "static" / "index.html").read_text(encoding="utf-8")
+CSS = (ROOT / "static" / "styles.css").read_text(encoding="utf-8")
+JS = (ROOT / "static" / "app.js").read_text(encoding="utf-8")
+SERVER = (ROOT / "server.py").read_text(encoding="utf-8")
 
 
 class LandingMarketTest(unittest.TestCase):
@@ -67,3 +70,27 @@ class LandingMarketTest(unittest.TestCase):
         self.assertIn("r$0,50 por 30 minutos", HTML.lower())
         self.assertIn("pay quickly with pix and get going", HTML.lower())
         self.assertIn("hero-line", HTML)
+
+    def test_three_short_agents_open_the_same_chat(self):
+        self.assertIn('data-brief="mkt"', HTML)
+        self.assertIn('data-brief="copy"', HTML)
+        self.assertIn('data-brief="viral"', HTML)
+        self.assertIn("is-live", HTML)
+        self.assertIn("const BRIEFS", JS)
+        self.assertNotIn("R$10", HTML)
+        self.assertEqual(HTML.count('id="pay"'), 1)
+
+    def test_click_tally_is_public_counts_only(self):
+        self.assertIn('id="pulso-tally"', HTML)
+        self.assertIn("/api/track/summary", JS)
+        self.assertIn("/api/track/summary", SERVER)
+        self.assertIn("track.summarize", SERVER)
+
+    def test_faq_is_machine_citable_without_a_second_sku(self):
+        self.assertIn("application/ld+json", HTML)
+        self.assertIn("FAQPage", HTML)
+        self.assertIn('id="faq"', HTML)
+        faq = HTML.split('id="faq"', 1)[1].lower()
+        self.assertIn("r$5", faq)
+        self.assertNotIn("plano mensal", faq)
+        self.assertNotIn("reseller alias", faq)

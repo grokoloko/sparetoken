@@ -627,6 +627,58 @@ document.addEventListener("visibilitychange", () => {
 })();
 
 const params = new URLSearchParams(location.search);
+
+const BRIEFS = {
+  mkt: "Escreve um post curto (máx 280) para spare tokens: R$5 / 5h / GROK 4.6 High Fast, Pix de um passo, login = código do bloco. Sem nome de pessoa. Sem segundo preço. Sem pedir chave, cookie, .env ou e-mail. Link: https://sparetoken.shop/?utm_source=shop&utm_medium=web&utm_campaign=agent&utm_content=mkt",
+  copy: "Escreve um parágrafo de prateleira para quem tem token de IA sobrando e quem precisa de uma hora de modelo. Tom de caderno, não pitch. Sem assinatura. Sem a palavra owner. Sem pedir e-mail ou WhatsApp. O caixa continua R$5 / 5h.",
+  viral: "Dá 3 ganchos de uma linha para indicar um amigo com o mesmo ?code= do bloco. Sem WhatsApp. Sem e-mail. Sem pedir chave. O convite é o código, não um cadastro.",
+};
+
+function briefText(key) {
+  let text = BRIEFS[key] || "";
+  const code = ((claimCode && claimCode.value) || params.get("code") || "").trim();
+  if (text && /^wdtsot-[A-Za-z0-9]{3,16}$/.test(code)) {
+    text += ` Convite: https://sparetoken.shop/?code=${encodeURIComponent(code)}`;
+  }
+  return text;
+}
+
+function fillBrief(key) {
+  const text = briefText(key);
+  if (!text || !input) return;
+  input.value = text;
+  resize();
+  input.focus();
+  location.hash = "chat";
+}
+
+document.querySelectorAll("[data-brief]").forEach((el) => {
+  const run = () => fillBrief(el.dataset.brief);
+  el.addEventListener("click", run);
+  el.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      run();
+    }
+  });
+});
+
+fetch("/api/track/summary", { credentials: "same-origin" })
+  .then((res) => res.json())
+  .then((data) => {
+    if (!data || !data.ok) return;
+    const box = document.getElementById("pulso-tally");
+    if (!box) return;
+    box.querySelectorAll("[data-tally]").forEach((node) => {
+      const key = node.getAttribute("data-tally");
+      if (key && Object.prototype.hasOwnProperty.call(data, key)) {
+        node.textContent = String(data[key] || 0);
+      }
+    });
+    box.hidden = false;
+  })
+  .catch(() => {});
+
 captureLanding();
 if (params.get("code") && claimCode && !claimCode.value) {
   claimCode.value = params.get("code");
