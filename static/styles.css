@@ -829,18 +829,56 @@ h2 {
 }
 .site-footer a { color: inherit; }
 
+/* Mobile: product chat first, hide decorative term, keep a usable nav. */
 @media (max-width: 860px) {
   .hero, .skills, .split, .shelf-rail { grid-template-columns: 1fr; }
-  .hero { gap: 28px; padding-top: 28px; }
-  .header-links { display: none; }
-  .wrap { width: min(1080px, calc(100% - 28px)); }
-  section { padding: 44px 0; }
+  .hero {
+    gap: 18px;
+    padding: 16px 0 12px;
+    align-items: stretch;
+  }
+  .hero > div:first-child { order: 2; }
+  .hero > .chat {
+    order: 1;
+    min-height: min(58vh, 420px);
+  }
+  .chat-log {
+    min-height: 140px;
+    max-height: none;
+    flex: 1;
+  }
+  .term { display: none; }
+  .header-links {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    flex-wrap: wrap;
+    max-width: 64%;
+    justify-content: flex-end;
+  }
+  .wrap { width: min(1080px, calc(100% - 24px)); }
+  .site-header { padding: 14px 0 4px; }
+  .kicker { margin-bottom: 10px; }
+  .hero-line {
+    font-size: clamp(28px, 7.2vw, 40px);
+    min-height: 2.6em;
+  }
+  .hero-line-text { max-width: 22ch; }
+  .lede { margin-bottom: 8px; }
+  .sub { margin-bottom: 14px; }
+  .actions { margin-bottom: 0; }
+  section { padding: 36px 0; }
+  .price-top { flex-wrap: wrap; gap: 6px; }
+  .ssh { font-size: 12px; }
 }
 
 @media (max-width: 430px) {
   body { font-size: 16px; }
-  .btn { width: 100%; }
+  .btn { width: 100%; min-width: 0; }
   .actions { flex-direction: column; }
   .price-top strong { font-size: 36px; }
   .ssh { font-size: 12px; }
+  .hero > .chat { min-height: min(54vh, 380px); }
+  .composer textarea { font-size: 16px; }
+  .header-links { gap: 8px; font-size: 11px; max-width: 68%; }
 }
