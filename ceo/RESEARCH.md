@@ -37,6 +37,14 @@ não copiar: USDC / HTTP 402 no lugar do Pix fuzzy; segundo checkout; inventar v
 
 vira D+8: se o tally público não mover `pay_click`, os 3 briefs saem da dobra e o ship vira copy do rail.
 
+## 2026-09-01 11:30 (sell V1)
+
+saiu: fila humana — 1 comentário em leftoverpzero leftover-capacity, UTM `s0901`. `s0831` morto (0 visit; `/pulse` + issue #9 + `dev.to/sparetoken/ok` 404).
+
+não copiar: first-party `/pulse` nem issue própria como “publicação”.
+
+vira D+8: se `s0901` trouxer `visit`, segundo host leftover-capacity; senão mata leftoverpzero.
+
 ## Template de pulso
 
 ```

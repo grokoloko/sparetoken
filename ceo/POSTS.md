@@ -18,4 +18,7 @@ Repo: https://github.com/sparetoken-shop/sparetoken
 
 | p009 | 2026-09-01 | X @sparetoken | 0.2.16 agents + tally — fila Mac | `p009` |
 
-Próximo: **p010** no próximo ship, ou **s001** se `sales-watch` imprimir CELEBRATE.
+| s0831 | 2026-08-31 | pulse+github+dev.to/ok | **morto** — 0 visit, 3×404 em 01/09 | `s0831` |
+| s0901 | 2026-09-01 | leftoverpzero DEV.to | human-needed comment — ainda sem permalink | `s0901` |
+
+Próximo: permalink `s0901` verificado, ou mata leftoverpzero em 02/09. X continua warmup. **p010** no próximo ship.

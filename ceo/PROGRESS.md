@@ -135,3 +135,18 @@ canal: github PR #2 (landed as sparetoken, not squash of fork commit)
 - Código do Groko ok. Merge cru do commit `grokoloko@tutamail` deixaria `main` vermelha.
 - Body da PR citou nome de pessoa — descrição pública precisa ser editada. Commit em si limpo.
 - Loja atualizada no path canônico. Unittest verde antes do push.
+
+## 2026-09-01 11:30 (sell V1)
+
+```
+tokens_pulso: ~magro
+tokens_mês_est: pulso venda 01/09
+ship: matou s0831; destino leftoverpzero s0901; fila humana (captcha)
+canal: devto leftoverpzero (human-needed) — sem X, sem segundo Pix
+```
+
+- track-report: 83 visit · 1 pay_click · 0 sell-UTM. `s0831` = 0. X p008 = 11 (warmup).
+- Destino único: https://dev.to/leftoverpzero/i-pointed-my-openai-client-at-leftover-capacity-56cl
+- Copy na fila. Captcha DEV.to visível = humano, não WhatsApp de login wall.
+- D+8: 09/09 julga `s0901`. `/pulse`+github não voltam à roleta.
+

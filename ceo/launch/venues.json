@@ -1,0 +1,20 @@
+{
+  "default": {
+    "host": "devto",
+    "url": "https://dev.to/leftoverpzero/i-pointed-my-openai-client-at-leftover-capacity-56cl",
+    "kind": "comment",
+    "note": "one leftover-capacity comment, never the dead /pulse host"
+  },
+  "2026-08-31": {
+    "host": "pulse-github",
+    "url": "https://sparetoken.shop/pulse/2026-08-31.html",
+    "kind": "fallback",
+    "note": "DEAD 01/09: s0831 brought 0 visit; shop pulse + issue #9 + dev.to/sparetoken/ok all 404"
+  },
+  "2026-09-01": {
+    "host": "devto",
+    "url": "https://dev.to/leftoverpzero/i-pointed-my-openai-client-at-leftover-capacity-56cl",
+    "kind": "comment",
+    "note": "one comment on leftover daily capacity; UTM s0901"
+  }
+}

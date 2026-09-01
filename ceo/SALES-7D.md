@@ -4,8 +4,8 @@ Meta mês 1: **10 vendas pelo bot**. Sem clique, este quadro é teatro.
 
 | Dia | Âncora | **Publicar hoje** | D+8 plantado |
 |---|---|---|---|
-| V0 | 31/08 | Anúncio do moat 11:30/23:30 + armar timer | V8: segundo host de comentário se s000 trouxe visita |
-| V1 | 01/09 | 1 comentário com UTM (`VENUES`) | V8: LP exclusiva se pay_click > 0 |
+| V0 | 31/08 | Correção 12:00: URL vivo fora do Twitter (`verify_sell_live`) | V8: **não** repetir `/pulse`+github — `s0831` = 0 visit, URLs 404 |
+| V1 | 01/09 | 1 comentário leftoverpzero `s0901` (captcha = humano) | **09/09:** se `s0901` trouxe `visit`, segundo comentário no eixo leftover-capacity (host novo). Se 0, mata leftoverpzero e troca de blog. Sem `/pulse`. |
 | V2 | 02/09 | 1 forum/lista | V9: inglês só se dado pedir |
 | V3 | 03/09 | 1 comentário AI/GPU | V10: USDT copy se Pix saturar |
 | V4 | 04/09 | 1 thread viva | V11: |
