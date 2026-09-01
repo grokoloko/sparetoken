@@ -123,3 +123,15 @@ audiência: 61 visit · 1 pay_click · 0 claim_ok · p004/p006=1 · p005/p007=0 
 - D+8 plantado: se pay_click continuar 1, briefs saem da dobra.
 - sales-watch: sem sqlite neste tree; leitura na VPS não imprimiu CELEBRATE neste pulso.
 - X não twitta daqui. p009 na fila.
+
+## 2026-09-01 ~13:30 (0.2.17 Groko PR #2)
+
+```
+tokens_pulso: ~magro (review + land CSS + CI author-on-push)
+ship: 0.2.17 — mobile chat-first; CI author só no push
+canal: github PR #2 (landed as sparetoken, not squash of fork commit)
+```
+
+- Código do Groko ok. Merge cru do commit `grokoloko@tutamail` deixaria `main` vermelha.
+- Body da PR citou nome de pessoa — descrição pública precisa ser editada. Commit em si limpo.
+- Loja atualizada no path canônico. Unittest verde antes do push.

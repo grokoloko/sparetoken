@@ -86,6 +86,13 @@ class LandingMarketTest(unittest.TestCase):
         self.assertIn("/api/track/summary", SERVER)
         self.assertIn("track.summarize", SERVER)
 
+    def test_mobile_puts_chat_first_and_hides_demo_term(self):
+        mobile = CSS.split("@media (max-width: 860px)", 1)[1]
+        self.assertIn(".hero > .chat", mobile)
+        self.assertIn("order: 1", mobile)
+        self.assertIn(".term { display: none; }", mobile)
+        self.assertNotIn(".header-links { display: none; }", mobile)
+
     def test_faq_is_machine_citable_without_a_second_sku(self):
         self.assertIn("application/ld+json", HTML)
         self.assertIn("FAQPage", HTML)

@@ -9,6 +9,15 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.17] — 2026-09-01
+
+No telefone o produto era o chat. A dobra mostrava o terminal de enfeite.
+
+### Changed
+
+- Mobile: chat primeiro, `.term` some, nav compacta, input 16px no iOS
+- CI: gate de author sparetoken-shop só no push — PR de fork (grokoloko) pode ficar verde
+
 ## [0.2.16] — 2026-09-01
 
 D1: agents curtos no mesmo chat + métrica de clique na prateleira.

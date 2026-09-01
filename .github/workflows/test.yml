@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: HEAD author is sparetoken-shop
+        if: github.event_name == 'push'
         run: |
           email="$(git log -1 --format='%ae')"
           test "$email" = "sparetoken-shop@users.noreply.github.com"

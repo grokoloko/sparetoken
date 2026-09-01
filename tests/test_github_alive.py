@@ -23,6 +23,7 @@ class GitHubAliveTest(unittest.TestCase):
 
     def test_ci_rejects_personal_git_author(self):
         self.assertIn("sparetoken-shop@users.noreply.github.com", CI)
+        self.assertIn("github.event_name == 'push'", CI)
 
     def test_publish_helper_uses_shop_identity_and_deploy_key(self):
         self.assertTrue(HELPER.is_file(), "ceo/launch/git-as-sparetoken.sh missing")
