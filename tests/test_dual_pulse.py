@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HB = (ROOT / "ceo" / "HEARTBEAT.md").read_text(encoding="utf-8")
+HB_SH = (ROOT / "ceo" / "launch" / "heartbeat.sh").read_text(encoding="utf-8")
 SELL = (ROOT / "ceo" / "launch" / "sell.sh").read_text(encoding="utf-8")
 VENUES = (ROOT / "ceo" / "VENUES.md").read_text(encoding="utf-8")
 
@@ -26,3 +27,17 @@ class DualPulseTest(unittest.TestCase):
         self.assertIn("utm_", VENUES.lower())
         self.assertNotIn("reply farm", VENUES.lower())
         self.assertIn("warmup", VENUES.lower())
+
+    def test_both_scripts_must_call_cursor_agent(self):
+        for name, body in ("heartbeat.sh", HB_SH), ("sell.sh", SELL):
+            with self.subTest(script=name):
+                self.assertIn("-p", body)
+                self.assertIn("--trust", body)
+                self.assertIn("--force", body)
+                self.assertIn("PULSE_FAIL", body)
+                self.assertNotIn("AGENT: off", body)
+                self.assertIn("git is forbidden", body)
+
+    def test_docs_forbid_agent_off_success(self):
+        self.assertIn("cursor-agent", HB.lower())
+        self.assertIn("pulso morto", HB.lower())
