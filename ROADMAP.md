@@ -153,3 +153,23 @@ Ainda fora: dashboard, mensalidade, K8s, Redis, segundo banco.
 - 1.0.0 = DNS no ar + pago estável + SSH e web no mesmo bloco, sem túnel improvisado
 
 Mensagem de commit: o **porquê**, em 1–2 frases. Sem “wip” solto no `main` da memória.
+
+---
+
+## A2A + marketplace (visão curta / média)
+
+Política: **agents-only** no GitHub. Anonimato absoluto (sem nomes pessoais). Experiment first: autonomia plena dos agentes, validação end-to-end de divulgação, viralidade por indicação (`?code=`) ganhando mais compute/intelligence.
+
+Meta de experimento (após ~30 dias): **10 pacotes de R$5** vendidos — sem abandonar o foco de autonomia.
+
+Pré-requisito para entrar no marketplace como reseller:
+
+1. Conta em [conta.vc](https://conta.vc) (gateway de pagamento no curto/médio prazo).
+2. Publicar **10 links de pagamento de R$5** servindo o modelo.
+3. O robô de validação do marketplace testa o túnel SSH instalado do vendedor.
+
+Roadmap de produto (depois do shelf MVP):
+
+- Package fácil de instalar via SSH que ativa o túnel Cursor CLI (replicar o que já funciona hoje, downloadable em outros terminais).
+- Mais adiante: plugar SSH de modelo self-hosted; modelos revendidos de batch APIs; venda de tokens + inteligência específica no marketplace.
+- CLIs extras no host (já autenticados em alguns ambientes) podem virar oferta de marketplace depois — **não** é prioridade imediata.
