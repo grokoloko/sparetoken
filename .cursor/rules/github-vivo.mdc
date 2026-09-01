@@ -1,0 +1,19 @@
+---
+description: Correção de agente e código vivo vão pro GitHub sparetoken-shop
+alwaysApply: true
+---
+
+# GitHub vivo
+
+O projeto é **vivo**. Trabalho que fica só no Mac ou na VPS é pulso morto.
+
+- Conta: `https://github.com/sparetoken-shop/sparetoken`. Só essa.
+- Sessão que corrige comportamento do agente, CI, heartbeat, slogan, SSH ou regra **termina em commit + push**.
+- Como: `ceo/launch/git-as-sparetoken.sh`. Identidade `sparetoken <sparetoken-shop@users.noreply.github.com>`. Deploy key. Nunca `gh` pessoal.
+- Tree suja no fim da sessão = falhou. `main` só com unittest verde.
+- Wrapper (`heartbeat.sh` / `sell.sh`) não chama `git`. O agent chama o helper.
+
+```
+# ❌ BAD — corrigir o pulso e deixar 0.2.14 uncommitted
+# ✅ GOOD — unittest verde → git-as-sparetoken.sh commit → push-alive
+```

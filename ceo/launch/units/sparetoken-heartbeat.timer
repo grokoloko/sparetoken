@@ -1,0 +1,10 @@
+[Unit]
+Description=sparetoken CEO heartbeat every day at 23:30 America/Sao_Paulo
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+Unit=sparetoken-heartbeat.service
+
+[Install]
+WantedBy=timers.target

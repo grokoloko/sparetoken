@@ -9,6 +9,31 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.15] — 2026-08-31
+
+O projeto vivo vai pro GitHub. Correção de agente sem push = pulso morto.
+
+### Added
+
+- `ceo/launch/git-as-sparetoken.sh` — identidade + deploy key, nunca `gh` pessoal
+- Regra absoluta `.cursor/rules/github-vivo.mdc`
+- CI unittest em todo push/PR + gate do author sparetoken-shop
+
+### Changed
+
+- Pulsos exigem commit + `push-alive` se a tree estiver dirty
+- `wdtsot.mdc` deixa de dizer “git só local”
+
+## [0.2.14] — 2026-08-31
+
+Os pulsos acordam o Cursor Agent. Carimbo sem inteligência = pulso morto.
+
+### Changed
+
+- `heartbeat.sh` e `sell.sh` chamam `run-cursor-agent.sh` (`agent -p --trust --force`)
+- systemd: PATH do `~/.local/bin`, timeout 2h, author sparetoken
+- Wrapper ainda não faz git; o agent pode, só sparetoken-shop
+
 ## [0.2.13] — 2026-08-31
 
 Dois pulsos: 11:30 vende, 23:30 shippa. D+8 dos dois lados.

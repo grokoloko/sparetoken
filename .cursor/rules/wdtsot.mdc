@@ -10,7 +10,7 @@ Marca: **sparetoken.shop**. Frase: we deserve to share our tokens. Alias legado:
 Antes de mudar código, leia `PRIVACY.md`, `anonimato.mdc` e `ROADMAP.md`. Não recrie o túnel SSH, o nginx default da VPS nem um backend novo.
 
 - Anonimato: ver `anonimato.mdc`. Sem git pessoal. Sem nome do operador no público.
-- App no ar: VPS Oracle, systemd `wdtsot.service`. Git do app = só local até conta anônima.
+- App no ar: VPS Oracle, systemd `wdtsot.service`. Git público: `sparetoken-shop/sparetoken`. Correção de agente termina em push. Ver `github-vivo.mdc`.
 - App: Python stdlib + SQLite em `server.py`. Créditos em `credits.py`.
 - Chat web: `agent --mode ask`. Terminal: `ssh agent-guest@HOST` → `/opt/cursor-agent-tunnel`.
 - Pagamento: SKU `wdtsot-5h` via conta.vc. Claim só se o charge público não estiver Open.

@@ -22,3 +22,8 @@ credentials.enc
 token_cache.json
 guests.jsonl
 .anon-chrome-social/
+.anon-chrome-groko/
+.anon-chrome-groko-native/
+.anon-chrome-groko2/
+.anon-chrome-groko-native2/
+.anon-chrome-tuta/

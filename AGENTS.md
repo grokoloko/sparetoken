@@ -4,7 +4,9 @@ Você está no MVP **sparetoken** / WDTSOT (*we deserve to share our tokens.*).
 
 Marca: https://sparetoken.shop · alias: https://wdtsot.shop.
 
-**Anonimato inviolável.** Sem founder público. Sem empresa. Sem push em conta pessoal. Leia `.cursor/rules/anonimato.mdc` antes de qualquer git/GitHub/Origin.
+**Anonimato inviolável.** Sem founder público. Sem empresa. Sem push em conta pessoal. Leia `.cursor/rules/anonimato.mdc` e `.cursor/rules/github-vivo.mdc` antes de qualquer git/GitHub/Origin.
+
+O repo público **já existe**: `https://github.com/sparetoken-shop/sparetoken`. Sessão que corrige agente, pulso, CI ou produto **termina em commit + push** via `ceo/launch/git-as-sparetoken.sh`. Tree suja = falhou.
 
 1. Leia `PRIVACY.md` (o contrato de prompt e credencial). Depois `README.md` e `ROADMAP.md`.
 1b. Se for o agente-CEO / heartbeat: `ceo/CEO.md` é o cérebro. Skill de mint P2P: `.cursor/skills/conta-wdtsot-charges/SKILL.md` + `ceo/docs/CONTA-CHARGES.md`.

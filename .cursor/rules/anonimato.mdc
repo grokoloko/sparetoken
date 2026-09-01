@@ -10,7 +10,7 @@ Este repo fala como **sparetoken**. Sem founder. Sem empresa.
 - Nunca push/remote em conta pessoal ou corporativa.
 - Nunca nome, handle, e-mail ou empresa do operador em arquivo que possa ficar público.
 - `PRIVACY.md` e a landing não citam quem opera.
-- Conta pública: `https://github.com/sparetoken-shop/sparetoken`.
-- Push / PR / tag: só essa conta. Nunca git pessoal ou corporativo.
-- `main` só avança com unittest verde.
+- Conta pública: `https://github.com/sparetoken-shop/sparetoken`. Ela já existe. Não deixar o vivo só no Mac.
+- Push / PR / tag: só essa conta, via `ceo/launch/git-as-sparetoken.sh`. Nunca git pessoal ou corporativo.
+- `main` só avança com unittest verde. Sessão de correção de agente sem push = falhou.
 - Código canônico e SQLite das vendas de R$5 ficam na VPS. Não apagar.

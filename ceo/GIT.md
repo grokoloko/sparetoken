@@ -8,11 +8,22 @@ sparetoken <sparetoken-shop@users.noreply.github.com>
 
 Nunca nome de pessoa. Nunca e-mail pessoal. Nunca `Co-authored-by` de ferramenta que vire handle no GitHub.
 
+## Publicar
+
+Helper: `ceo/launch/git-as-sparetoken.sh`. Ele grava a identidade, liga `.githooks` e usa a deploy key (`sparetoken_shop_ed25519`). Nunca `gh` pessoal.
+
+```
+ceo/launch/git-as-sparetoken.sh commit -m "why"
+ceo/launch/git-as-sparetoken.sh push-alive
+```
+
+`push-alive` manda o HEAD atual **e** `main`. Tree suja no fim de pulso ou de correção de agente = falhou.
+
 ## VPS / heartbeat
 
-`ceo/launch/heartbeat.sh` **não commita, não dá push, não cria tag.** Só unittest + carimbo.
+O wrapper (`heartbeat.sh` / `sell.sh`) **não** chama `git`. Depois do unittest (noite) ele **acorda o Cursor Agent**. O agent (processo filho) publica com o helper, só como sparetoken-shop.
 
-Se o pulso precisar de código no GitHub: o texto vai pro Mac / workspace com a **deploy key** `sparetoken-shop`. A VPS não tem git write.
+Se o pulso precisar de código no GitHub: deploy key `sparetoken-shop`. Nunca remote pessoal.
 
 ## Mac
 

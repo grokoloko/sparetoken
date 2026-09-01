@@ -1,5 +1,5 @@
 [Unit]
-Description=sparetoken CEO sell pulse (Cursor Agent + live URL)
+Description=sparetoken CEO heartbeat (unittest + Cursor Agent)
 After=network.target
 
 [Service]
@@ -13,8 +13,7 @@ Environment=GIT_AUTHOR_NAME=sparetoken
 Environment=GIT_AUTHOR_EMAIL=sparetoken-shop@users.noreply.github.com
 Environment=GIT_COMMITTER_NAME=sparetoken
 Environment=GIT_COMMITTER_EMAIL=sparetoken-shop@users.noreply.github.com
-EnvironmentFile=-/home/ubuntu/.anon-secrets/sell.env
 TimeoutStartSec=7200
 StandardOutput=journal
 StandardError=journal
-ExecStart=/home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot/ceo/launch/sell.sh
+ExecStart=/home/ubuntu/development/guest-sessions/session-20260829-212831-83c1eb/workspace/wdtsot/ceo/launch/heartbeat.sh

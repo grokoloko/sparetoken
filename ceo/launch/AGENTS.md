@@ -1,6 +1,6 @@
 # Launch agent — heartbeat
 
-Dois crons: **11:30 sell.sh** · **23:30 heartbeat.sh**. Sem git write.
+Dois crons: **11:30 sell.sh** · **23:30 heartbeat.sh**. Os dois acordam o Cursor Agent (`run-cursor-agent.sh`). O wrapper não faz git write; o agent sim, só sparetoken-shop.
 
 Antes de qualquer ferramenta, o cérebro é `ceo/CEO.md`. Depois:
 
@@ -13,7 +13,7 @@ Antes de qualquer ferramenta, o cérebro é `ceo/CEO.md`. Depois:
 7. Se canal existir: 1 post (X+TG juntos quando der).
 8. `PROGRESS.md` com `tokens_pulso`. Referral / `?code=` não some.
 9. Sem identidade. Sem segundo Pix. Sem Zernio no dia 0 da conta.
-10. Git: `ceo/GIT.md`. Heartbeat na VPS **não commita**. Push só `sparetoken-shop`.
+10. Git: `ceo/GIT.md`. Wrapper não commita. Agent publica com `git-as-sparetoken.sh` (commit + push-alive). Tree suja = falhou.
 11. Quatro launchers curtos (além do heartbeat): `research` · `outreach` · `sales-watch` · `track-report`. X: `x-pulse.md`.
 
 Cursor se chama em 24h. Codex / Claude / Antigravity / MetaMuse só com `tasks/marketplace-clis.md`.

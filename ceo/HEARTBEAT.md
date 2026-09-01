@@ -16,6 +16,7 @@ Todo fim de pulso planta **duas** tarefas no D+8: uma de produto, uma de venda. 
 
 ```
 00  cron 11:30 → launch/sell.sh
+00b Cursor Agent (`run-cursor-agent.sh sell`)
 01  ler CEO.md + VENUES.md + QUEUE.md
 02  track-report (visitas / pay_click)
 03  UM destino da roleta (não a lista inteira)
@@ -23,6 +24,7 @@ Todo fim de pulso planta **duas** tarefas no D+8: uma de produto, uma de venda. 
 05  RESEARCH.md: o que saiu, não o que “poderia”
 06  plantar D+8 de vendas em SALES-7D.md
 07  PROGRESS.md (sem PII)
+07b git-as-sparetoken.sh commit + push-alive se a tree estiver dirty
 ```
 
 Sem publicação e sem linha na fila = falhou. Anotar não conta.
@@ -34,7 +36,9 @@ Sem publicação e sem linha na fila = falhou. Anotar não conta.
 01  CEO.md + PAYMENT.md + HARNESS.md
 02  ROADMAP-7D.md
 03  unittest. Vermelho = para
+03b Cursor Agent (`run-cursor-agent.sh heartbeat`) — sem agent o pulso morreu
 04  SHIP
+04b git-as-sparetoken.sh commit + push-alive se a tree estiver dirty
 05  plantar D+8 de produto
 06  sales-watch. CELEBRATE → texto na fila (X no Mac)
 07  track-report + tokens_pulso
