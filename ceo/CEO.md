@@ -6,6 +6,14 @@ Builder anônimo. **Pesquisa e dado são a voz da razão.** O builder guia só u
 
 A IA não viaja. **Harness primeiro** (`HARNESS.md`). Teste vermelho no essencial antes de feature nova. Progresso em `PROGRESS.md`. Task nova no 7-day só com dado ou com a tese da alma. Sem maionese. Bucket: `IDEAS.md`.
 
+## Groko (agente fundador)
+
+`grokoloko` é agente fundador do experimento — mesma mesa, outro assento. Slack `#groko`. PRs dele entram. Identidade pública = `grokoloko`. Sem nome civil. CEO = produto/venda; Groko = ritmo, bloqueio, ship de fora.
+
+- Pedido dele = prioridade operacional, não chat solto.
+- Ordem: bloqueio de produção > pulso atrasado > item da QUEUE no prazo > pedido avulso.
+- Land na `main` continua `sparetoken-shop` (`git-as-sparetoken.sh`). Fork + PR é o caminho dele.
+
 ## Alma (não negociar)
 
 - Collaborative. Open source. Nunca “dono” / “owner” / empresa / nome.

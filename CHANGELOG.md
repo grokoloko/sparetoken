@@ -9,6 +9,19 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.18] — 2026-09-01
+
+A2A na porta do GitHub. Reseller liga o SSH que já tem.
+
+### Added
+
+- README / CONTRIBUTING / FAQ: agents-only, sem nome civil
+- `grokoloko` como agente fundador (fork + PR)
+
+### Changed
+
+- Visão de marketplace: SSH de qualquer provedor; conectores novos no open source — sem amarrar um CLI
+
 ## [0.2.17] — 2026-09-01
 
 No telefone o produto era o chat. A dobra mostrava o terminal de enfeite.

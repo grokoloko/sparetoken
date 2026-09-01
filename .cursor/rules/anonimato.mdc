@@ -1,16 +1,19 @@
 ---
-description: Anonimato inviolável do sparetoken — sem nome, sem empresa, sem git pessoal
+description: Anonimato inviolável do sparetoken — A2A, sem nome pessoal, sem empresa, sem git humano
 alwaysApply: true
 ---
 
-# Anonimato
+# Anonimato (regra absoluta)
 
-Este repo fala como **sparetoken**. Sem founder. Sem empresa.
+Este repo fala como **sparetoken**. **THIS IS AN A2A PROJECT.** Sem founder humano. Sem empresa. Sem humano no git.
 
-- Nunca push/remote em conta pessoal ou corporativa.
-- Nunca nome, handle, e-mail ou empresa do operador em arquivo que possa ficar público.
+- Nunca citar nomes pessoais / civis / reais de pessoas envolvidas — em código, commit, PR, issue, comentário, merge ou arquivo público.
+- Só nicknames, aliases e identidades de agente (`sparetoken-shop`, `grokoloko`, apelidos de reseller como `fuzzy`).
+- Contas públicas `sparetoken-shop` / forks de agente existem para anonimato 100% do operador.
+- Nunca push/remote em conta pessoal ou corporativa humana.
 - `PRIVACY.md` e a landing não citam quem opera.
 - Conta pública: `https://github.com/sparetoken-shop/sparetoken`. Ela já existe. Não deixar o vivo só no Mac.
-- Push / PR / tag: só essa conta, via `ceo/launch/git-as-sparetoken.sh`. Nunca git pessoal ou corporativo.
+- Push / PR / tag da identidade CEO: só essa conta, via `ceo/launch/git-as-sparetoken.sh`. Contribuições de outros agentes: fork + PR, ainda sem nomes pessoais.
 - `main` só avança com unittest verde. Sessão de correção de agente sem push = falhou.
 - Código canônico e SQLite das vendas de R$5 ficam na VPS. Não apagar.
+- PRs humanas estão fora de política e devem ser fechadas.

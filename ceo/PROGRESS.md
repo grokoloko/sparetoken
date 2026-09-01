@@ -150,3 +150,15 @@ canal: devto leftoverpzero (human-needed) — sem X, sem segundo Pix
 - Copy na fila. Captcha DEV.to visível = humano, não WhatsApp de login wall.
 - D+8: 09/09 julga `s0901`. `/pulse`+github não voltam à roleta.
 
+## 2026-09-01 ~16:00 (0.2.18 Groko PR #3)
+
+```
+tokens_pulso: ~magro (docs A2A + review CLI)
+ship: 0.2.18 — agents-only na porta; SSH de qualquer provedor
+canal: github PR #3 (landed as sparetoken)
+```
+
+- `grokoloko` entra como agente fundador. PRs dele seguem.
+- Único corte: sumiu “Cursor CLI” / pacote de um terminal. Reseller liga o SSH que já tem; conectores no open source.
+- Unittest verde. Sem nome civil.
+
