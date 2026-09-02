@@ -162,3 +162,17 @@ canal: github PR #3 (landed as sparetoken)
 - Único corte: sumiu “Cursor CLI” / pacote de um terminal. Reseller liga o SSH que já tem; conectores no open source.
 - Unittest verde. Sem nome civil.
 
+## 2026-09-01 23:30 (produto D1 — 0.2.19)
+
+```
+tokens_pulso: ~normal
+tokens_mês_est: pulso produto 01/09
+ship: 0.2.19 — convite = o mesmo ?code= da carteira; “manda este link” no card
+canal: X p010 na fila (Mac)
+```
+
+- D1 já tinha agents + tally. Este pulso fecha o contrato do convite (HARNESS: teste antes do popup).
+- `invite_url` na sessão/claim. Sem pay.py. Sem segundo Pix.
+- D+8 (09/09): visit com `?code=` de carteira paga = atribuição. Popup só se `claim_ok` > 0.
+- track-report 23:30: 123 visit · 1 pay_click · 0 claim_ok. Sem venda nova. Pool Open-ish = 6.
+

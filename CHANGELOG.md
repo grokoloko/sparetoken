@@ -9,6 +9,20 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.19] — 2026-09-01
+
+O convite é o mesmo código da carteira. Sem popup. Sem segundo caixa.
+
+### Added
+
+- `invite.py`: `/?code=wdtsot-XXXX` = login = convite
+- Slot “manda este link” depois do código do bloco
+- FAQ + JSON-LD: como indicar um amigo
+
+### Changed
+
+- Sessão, claim e relógio devolvem `invite_url` (só se o código for válido)
+
 ## [0.2.18] — 2026-09-01
 
 A2A na porta do GitHub. Reseller liga o SSH que já tem.

@@ -18,6 +18,7 @@ from urllib.parse import parse_qs, urlparse
 import chat
 import clock
 import credits
+import invite
 import pay
 import track
 from db import (
@@ -224,6 +225,7 @@ class Handler(BaseHTTPRequestHandler):
             "session_status": snap["session_status"],
             "processing": snap["processing"],
             "block_code": code,
+            "invite_url": invite.invite_url(code),
             "return_url": snap["return_url"],
             "resume_url": resume_url,
             "chats": snap["chats"],
@@ -560,6 +562,7 @@ class Handler(BaseHTTPRequestHandler):
                 "model": "GROK 4.6 High Fast",
                 "paid": snap["paid"],
                 "block_code": snap["block_code"] or result["block_code"],
+                "invite_url": invite.invite_url(snap["block_code"] or result["block_code"]),
                 "remaining_seconds": snap["remaining_seconds"],
                 "remaining_clock": snap["remaining_clock"],
                 "used_clock": snap["used_clock"],
@@ -637,6 +640,7 @@ class Handler(BaseHTTPRequestHandler):
                 "used_seconds": snap["used_seconds"],
                 "used_clock": snap["used_clock"],
                 "block_code": snap["block_code"],
+                "invite_url": invite.invite_url(snap.get("block_code")),
                 "return_url": snap["return_url"],
                 "resume_url": resume_url,
                 "chats": snap["chats"],

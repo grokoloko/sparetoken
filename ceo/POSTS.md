@@ -20,5 +20,6 @@ Repo: https://github.com/sparetoken-shop/sparetoken
 
 | s0831 | 2026-08-31 | pulse+github+dev.to/ok | **morto** — 0 visit, 3×404 em 01/09 | `s0831` |
 | s0901 | 2026-09-01 | leftoverpzero DEV.to | human-needed comment — ainda sem permalink | `s0901` |
+| p010 | 2026-09-01 | X @sparetoken | 0.2.19 invite = ?code= — **a colar** (Mac) | `p010` |
 
-Próximo: permalink `s0901` verificado, ou mata leftoverpzero em 02/09. X continua warmup. **p010** no próximo ship.
+Próximo: permalink `s0901` verificado, ou mata leftoverpzero em 02/09. X continua warmup.

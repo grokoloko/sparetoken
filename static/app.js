@@ -126,11 +126,33 @@ function setRemaining(n) {
         : `${n} mensagens para experimentar`;
 }
 
-function showBlock(code) {
+function showInvite(code, urlFromApi) {
+  const wrap = document.getElementById("invite-wrap");
+  const urlEl = document.getElementById("invite-url");
+  const copyBtn = document.getElementById("invite-copy");
+  if (!wrap || !urlEl) return;
+  let url = urlFromApi || "";
+  if (!url) {
+    const clean = (code || "").trim();
+    if (/^wdtsot-[A-Za-z0-9]{3,16}$/.test(clean)) {
+      url = `https://sparetoken.shop/?code=${encodeURIComponent(clean)}`;
+    }
+  }
+  if (!url) {
+    wrap.hidden = true;
+    return;
+  }
+  urlEl.textContent = url;
+  wrap.hidden = false;
+  if (copyBtn) copyBtn.dataset.copy = url;
+}
+
+function showBlock(code, inviteFromApi) {
   if (!code || !blockWrap || !blockCode) return;
   blockCode.textContent = code;
   blockWrap.hidden = false;
   if (claimCode && !claimCode.value) claimCode.value = code;
+  showInvite(code, inviteFromApi);
 }
 
 function isGenericLabel(label) {
@@ -252,7 +274,7 @@ function applySession(data) {
     renderClock(data);
     stopPaidLoop();
     if (payNote) payNote.textContent = "saldo zero. o mesmo Pix de R$5 abre outro bloco de 5h.";
-    if (data.block_code) showBlock(data.block_code);
+    if (data.block_code) showBlock(data.block_code, data.invite_url);
     return;
   }
   if (data.ok === false) return;
@@ -282,7 +304,7 @@ function applySession(data) {
     renderClock(data);
     setRemaining(data.remaining_messages);
   }
-  if (data.block_code) showBlock(data.block_code);
+  if (data.block_code) showBlock(data.block_code, data.invite_url);
 }
 
 async function clockAction(action, extra) {

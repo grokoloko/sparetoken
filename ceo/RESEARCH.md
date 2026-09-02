@@ -45,6 +45,14 @@ não copiar: first-party `/pulse` nem issue própria como “publicação”.
 
 vira D+8: se `s0901` trouxer `visit`, segundo host leftover-capacity; senão mata leftoverpzero.
 
+## 2026-09-01 23:30 (produto D1)
+
+viu: token-for-token/t4t já cobra xBZZ por token servido com escrow on-chain (Gnosis); o login é wallet + stake, não um código de bloco.
+
+não copiar: xBZZ / USDC no lugar do Pix fuzzy; segundo checkout.
+
+vira D+8: se o convite `/?code=` gerar visit, contar atribuição no sqlite (ainda sem comissão).
+
 ## Template de pulso
 
 ```

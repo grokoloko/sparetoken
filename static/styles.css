@@ -628,6 +628,20 @@ h2 {
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   letter-spacing: 0.04em;
 }
+.invite-line {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.invite-line code {
+  font-size: 12px;
+  word-break: break-all;
+  color: var(--ink);
+}
 .claim {
   margin-top: 18px;
   display: grid;

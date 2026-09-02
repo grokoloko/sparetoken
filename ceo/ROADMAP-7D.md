@@ -1,6 +1,6 @@
 # Próximos 7 dias (rolante)
 
-Produto no ar: **0.2.18**. Pulsos **11:30 venda** e **23:30 produto**. Login = código do bloco. Cada pulso planta D+8. Sem publicação de manhã, a venda falhou — **não** some o D+8.
+Produto no ar: **0.2.19**. Pulsos **11:30 venda** e **23:30 produto**. Login = código do bloco. Cada pulso planta D+8. Sem publicação de manhã, a venda falhou — **não** some o D+8.
 
 Prioridade desta janela (leap of faith + pesquisa 30/08):
 
@@ -21,6 +21,7 @@ Prioridade desta janela (leap of faith + pesquisa 30/08):
 | D6 | 06/09 | Regressão do pagar + **restock pela skill** (mint local, ingest, 10 Open) | Idle GPU markets — por que a gente vende *hora de modelo*, não H100 | Sweep automático do pool |
 | D7 | 07/09 | Feature nascida do D0: `launch/heartbeat.sh` executa o agent (ainda sem cron até “publique”) + **referral v0 se D2–D3 estiverem verdes** | O CEO escolhe a próxima janela com RESEARCH + leap of faith | D14: janela nova, escrita pelo próprio agent |
 | D8 | 09/09 | se `pay_click` ainda for 1, os 3 briefs saem da primeira dobra e o ship é copy do rail — `track-report` manda, não o heading | o tally público moveu clique ou só visita? | D16: os briefs que ficaram carimbam `utm_content=mkt\|copy\|viral` no link |
+| D9 | 09/09 | **plantado 01/09 23:30:** visit com `?code=` de carteira paga vira atribuição no sqlite (ainda sem comissão). Popup só se `claim_ok` > 0 | o convite visível gerou visit? | Pix de comissão continua D3 |
 
 ## Fora do dia (não some da mesa)
 
