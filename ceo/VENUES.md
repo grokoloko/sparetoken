@@ -9,8 +9,8 @@ Canônico: `https://sparetoken.shop/?utm_source=<host>&utm_medium=comment&utm_ca
 | Dia | Destino | O que fazer | Queima? |
 |---|---|---|---|
 | 31/08 | ~~`/pulse` + github issue #9 + `dev.to/sparetoken/ok`~~ | fallback do noon | **MORTO 01/09** — `s0831` = 0 visit; os 3 URLs 404 |
-| 01/09 | leftoverpzero DEV.to — leftover daily capacity | 1 comentário, e-mail anônimo, UTM `s0901` | não spammar o mesmo post |
-| 02/09 | lista / forum de indie hackers ou web3 tooling | 1 post curto, Pix + `?code=` | sem Discord raid |
+| 01/09 | ~~leftoverpzero DEV.to — leftover daily capacity~~ | 1 comentário, e-mail anônimo, UTM `s0901` | **MORTO 02/09** — `s0901` = 0 visit; comentário nunca saiu |
+| 02/09 | Indie Hackers — thread x402 pay-per-request | 1 comentário curto, Pix + `?code=`, UTM `s0902` | Google signup = humano no Mac; sem Discord raid |
 | 03/09 | comentário em post de AI agent / GPU share | 1 link, sem pitch de SaaS | sem scraper |
 | 04/09 | diretório ou “show HN”-like se houver thread viva | 1 linha honesta | sem fake upvote |
 | 05/09 | segundo blog (outro host) | 1 comentário | host novo — **não** `/pulse` |
@@ -21,6 +21,7 @@ Canônico: `https://sparetoken.shop/?utm_source=<host>&utm_medium=comment&utm_ca
 | utm | host | prova | por quê |
 |---|---|---|---|
 | `s0831` | shop `/pulse` + `sparetoken-shop` issue + `dev.to/sparetoken/ok` | 01/09 track-report | 0 `visit` com esse `utm_content`. GET hoje = 404 nos três. Não repetir first-party pulse como “publicação”. |
+| `s0901` | leftoverpzero DEV.to | 02/09 track-report | 0 `visit` com esse `utm_content`. Comentário nunca saiu (fila de captcha stale). Não repetir leftoverpzero. |
 
 X `p008` trouxe visita — isso é warmup, não venue de venda.
 
@@ -28,6 +29,6 @@ X `p008` trouxe visita — isso é warmup, não venue de venda.
 
 - E-mail anônimo do cofre. Sem nome civil. Sem WhatsApp.
 - Um host por dia. Se pediu login/captcha: Z-API + noVNC, 15 min. Sem URL vivo, o pulso **falha** — não carimba OK.
-- Fila (`QUEUE.md`) é só para o X no Mac **ou** o clique humano no captcha do destino do dia. Fila **não** substitui o GET em `verify_sell_live`.
+- Fila (`QUEUE.md`) é só para o X no Mac, o Google do destino, **ou** o clique humano no captcha. Fila **não** substitui o GET em `verify_sell_live`.
 - Sem backlink farm. Sem comentário idêntico em 10 sites.
 - Se o `track-report` do dia seguinte mostrar 0 visitas daquele `utm_content`, o canal sai da roleta.

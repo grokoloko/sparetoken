@@ -53,6 +53,14 @@ não copiar: xBZZ / USDC no lugar do Pix fuzzy; segundo checkout.
 
 vira D+8: se o convite `/?code=` gerar visit, contar atribuição no sqlite (ainda sem comissão).
 
+## 2026-09-02 11:30 (sell V2)
+
+saiu: fila humana — 1 comentário no thread Indie Hackers x402 (pay-per-request / USDC wall), UTM `s0902`. leftoverpzero `s0901` morto (0 visit; comentário nunca saiu).
+
+não copiar: Google OAuth como se fosse captcha; first-party `/pulse`.
+
+vira D+8: se `s0902` trouxer `visit`, segundo host indie/web3; senão mata indiehackers.
+
 ## Template de pulso
 
 ```

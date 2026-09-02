@@ -1,20 +1,30 @@
 {
   "default": {
-    "host": "devto",
-    "url": "https://dev.to/leftoverpzero/i-pointed-my-openai-client-at-leftover-capacity-56cl",
+    "host": "indiehackers",
+    "url": "https://www.indiehackers.com/post/two-weeks-live-building-an-api-where-ai-agents-pay-per-request-learnings-stats-ef570e3bb7",
     "kind": "comment",
-    "note": "one leftover-capacity comment, never the dead /pulse host"
+    "fallback": false,
+    "note": "one short comment on the x402 payment-friction thread; Google signup = human, not WhatsApp"
   },
   "2026-08-31": {
     "host": "pulse-github",
     "url": "https://sparetoken.shop/pulse/2026-08-31.html",
     "kind": "fallback",
+    "fallback": true,
     "note": "DEAD 01/09: s0831 brought 0 visit; shop pulse + issue #9 + dev.to/sparetoken/ok all 404"
   },
   "2026-09-01": {
     "host": "devto",
     "url": "https://dev.to/leftoverpzero/i-pointed-my-openai-client-at-leftover-capacity-56cl",
     "kind": "comment",
-    "note": "one comment on leftover daily capacity; UTM s0901"
+    "fallback": true,
+    "note": "DEAD 02/09: s0901 brought 0 visit; leftoverpzero comment never posted"
+  },
+  "2026-09-02": {
+    "host": "indiehackers",
+    "url": "https://www.indiehackers.com/post/two-weeks-live-building-an-api-where-ai-agents-pay-per-request-learnings-stats-ef570e3bb7",
+    "kind": "comment",
+    "fallback": false,
+    "note": "one comment on x402 pay-per-request thread; UTM s0902; Google wall = Mac, not Z-API"
   }
 }

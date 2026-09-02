@@ -176,3 +176,17 @@ canal: X p010 na fila (Mac)
 - D+8 (09/09): visit com `?code=` de carteira paga = atribuição. Popup só se `claim_ok` > 0.
 - track-report 23:30: 123 visit · 1 pay_click · 0 claim_ok. Sem venda nova. Pool Open-ish = 6.
 
+## 2026-09-02 11:30 (sell V2)
+
+```
+tokens_pulso: ~magro
+tokens_mês_est: pulso venda 02/09
+ship: matou s0901 leftoverpzero; destino Indie Hackers s0902; fila humana (Google)
+canal: indiehackers x402 thread (human-needed) — sem X, sem segundo Pix, sem Z-API
+```
+
+- track-report: 131 visit · 1 pay_click · 0 sell-UTM. `s0901` = 0. X p008 = 14 (warmup).
+- Destino único: https://www.indiehackers.com/post/two-weeks-live-building-an-api-where-ai-agents-pay-per-request-learnings-stats-ef570e3bb7
+- Copy na fila. Google signup = login wall, não captcha — sem WhatsApp.
+- D+8: 10/09 julga `s0902`. leftoverpzero e `/pulse`+github não voltam à roleta.
+
