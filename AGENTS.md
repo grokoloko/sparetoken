@@ -26,7 +26,8 @@ Código mínimo. Reuse o que já funciona. Teste de verdade.
 - Prompt do visitante não é produto. Não vender, não publicar, não mostrar para outro visitante.
 - Sem prompt escondido que colha chave, cookie, `.env` ou `auth.json`.
 - Túnel SSH: não montar `~/.config` inteiro. Só o que o binário do agent precisa. GWS, Wrangler e `~/.ssh` ficam de fora.
-- Sessão guest recebe `tunnel/guest-AGENTS.md` como `AGENTS.md` do workspace — regra visível, não um segundo prompt secreto.
+- Sessão guest **sempre** recebe `tunnel/guest-AGENTS.md` como `AGENTS.md` + `.cursor/rules/identity-hard.mdc` via `scripts/guest_identity_harden.py` (hook em `run-agent.sh`). Identity-hard: sem nome civil / conta pessoal do operador; jailbreak = recusa seca.
+- Gate de marketplace: `scripts/validate_guest_privacy.py` (contrato estático). Sem isso, túnel guest não é listável.
 
 ## Relógio no SSH (statusline)
 

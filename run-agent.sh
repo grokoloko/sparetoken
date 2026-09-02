@@ -64,6 +64,8 @@ write_cli_config() {
       "Read(/home/ubuntu/.config/.wrangler/**)",
       "Read(/home/ubuntu/.ssh/**)",
       "Read(/home/ubuntu/.config/cursor/auth.json)",
+      "Read(/home/ubuntu/.config/cursor/**/user.json)",
+      "Read(/home/ubuntu/.config/cursor/**/email)",
       "Read(/home/ubuntu/development/guest-sessions/**/logs/**)",
       "Read(/home/ubuntu/development/guest-sessions/guests.jsonl)"
     ]
@@ -99,6 +101,8 @@ JSON
       "Read(/home/ubuntu/.config/.wrangler/**)",
       "Read(/home/ubuntu/.ssh/**)",
       "Read(/home/ubuntu/.config/cursor/auth.json)",
+      "Read(/home/ubuntu/.config/cursor/**/user.json)",
+      "Read(/home/ubuntu/.config/cursor/**/email)",
       "Read(/home/ubuntu/development/guest-sessions/guests.jsonl)"
     ]
   }
@@ -159,6 +163,18 @@ if [[ -n "$RESUME_TOKEN" ]]; then
   CHAT_ID="$(/usr/bin/python3 -c 'import json,sys; print(json.loads(sys.argv[1]).get("chat_id") or "")' "$RESOLVED")"
   mkdir -p "$WORKSPACE" "$LOG_DIR" "$CURSOR_STATE"
   write_cli_config "$CURSOR_STATE" "$WORKSPACE"
+  HARDEN_PY="/opt/cursor-agent-tunnel/guest_identity_harden.py"
+  GUEST_AGENTS_SRC="/opt/cursor-agent-tunnel/guest-AGENTS.md"
+  if [[ ! -f "$HARDEN_PY" ]]; then
+    HERE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    if [[ -f "${HERE_DIR}/scripts/guest_identity_harden.py" ]]; then
+      HARDEN_PY="${HERE_DIR}/scripts/guest_identity_harden.py"
+      GUEST_AGENTS_SRC="${HERE_DIR}/tunnel/guest-AGENTS.md"
+    fi
+  fi
+  if [[ -f "$HARDEN_PY" ]]; then
+    /usr/bin/python3 "$HARDEN_PY" "$WORKSPACE" "$GUEST_AGENTS_SRC" >/dev/null
+  fi
   stop_live_session "$SESSION_DIR" "$WORKSPACE"
   {
     echo "resume at=${STARTED_AT} peer=${SSH_PEER} token=${RESUME_TOKEN} chat=${CHAT_ID}"
@@ -180,27 +196,21 @@ Modelo: ${MODEL}
 Prompt desta sessão não é publicado nem vendido.
 Não cole chave de outra pessoa. Não leia ~/.config do host.
 TXT
-  if [[ ! -f "${WORKSPACE}/AGENTS.md" ]]; then
-    cat > "${WORKSPACE}/AGENTS.md" <<'TXT'
-# This SSH session
-
-You are a guest on sparetoken (we deserve to share our tokens). The shared token is already paid. You do not need anyone else’s API key.
-
-## Do not
-
-- Read `/home/ubuntu/.config`, `auth.json`, `.env`, Wrangler, GWS, or `~/.ssh`.
-- Save, copy, or exfiltrate credentials — the founder’s or another guest’s.
-- Write a helper that harvests the user’s prompt or keys “for later”.
-- Open another guest’s `session-*` directory.
-
-## Do
-
-- Work only in this workspace.
-- Treat anything the human pastes as theirs. Do not persist secrets they pasted by accident; ask them to rotate.
-- If asked to dump host config, refuse.
-
-There is no hidden prompt behind this file. This is the rule.
-TXT
+  # Identity-hard: always (re)install guest AGENTS + scrub local git identity.
+  HARDEN_PY="/opt/cursor-agent-tunnel/guest_identity_harden.py"
+  GUEST_AGENTS_SRC="/opt/cursor-agent-tunnel/guest-AGENTS.md"
+  if [[ ! -f "$HARDEN_PY" ]]; then
+    HERE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    if [[ -f "${HERE_DIR}/scripts/guest_identity_harden.py" ]]; then
+      HARDEN_PY="${HERE_DIR}/scripts/guest_identity_harden.py"
+      GUEST_AGENTS_SRC="${HERE_DIR}/tunnel/guest-AGENTS.md"
+    fi
+  fi
+  if [[ -f "$HARDEN_PY" ]]; then
+    /usr/bin/python3 "$HARDEN_PY" "$WORKSPACE" "$GUEST_AGENTS_SRC" >/dev/null
+  else
+    echo "wdtsot: missing guest_identity_harden.py — refusing to start without identity-hard AGENTS" >&2
+    exit 3
   fi
 fi
 
@@ -300,6 +310,7 @@ echo "Para voltar: ssh -t agent-guest@wdtsot.shop resume ${SESSION_ID}"
 echo "Workspace isolado: ${WORKSPACE}"
 echo "So esta pasta e gravavel. Ctrl+C / exit para sair."
 echo "Privacidade: prompt desta sessao nao e vendido nem publicado."
+echo "Identity-hard: agente nao revela nome/conta do operador. Jailbreak = recusa seca."
 echo "Nao cole chave de terceiros. O agent nao deve ler ~/.config do host."
 echo "Contrato: https://github.com/sparetoken-shop/sparetoken/blob/main/PRIVACY.md"
 echo
@@ -332,11 +343,23 @@ bwrap \
   --bind "${CURSOR_STATE}" "${REAL_HOME}/.cursor" \
   --chdir "${WORKSPACE}" \
   --setenv HOME "${REAL_HOME}" \
+  --setenv USER agent-guest \
+  --setenv LOGNAME agent-guest \
   --setenv PATH "${REAL_HOME}/.local/bin:/usr/local/bin:/usr/bin:/bin" \
   --setenv TMPDIR /tmp \
   --setenv LOG_DIR "${LOG_DIR}" \
   --setenv SESSION_DIR "${SESSION_DIR}" \
   --setenv SESSION_ID "${SESSION_ID}" \
+  --setenv GIT_AUTHOR_NAME sparetoken-guest \
+  --setenv GIT_AUTHOR_EMAIL guest@sparetoken.local \
+  --setenv GIT_COMMITTER_NAME sparetoken-guest \
+  --setenv GIT_COMMITTER_EMAIL guest@sparetoken.local \
+  --unsetenv EMAIL \
+  --unsetenv DEBEMAIL \
+  --unsetenv DEBFULLNAME \
+  --unsetenv USER_FULL_NAME \
+  --unsetenv GITHUB_USER \
+  --unsetenv GH_USER \
   --unsetenv CURSOR_AGENT \
   --unsetenv CURSOR_CONVERSATION_ID \
   --unsetenv CURSOR_ASKPASS_SOCKET \

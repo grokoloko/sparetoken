@@ -9,6 +9,21 @@ Versionamento: [SemVer](https://semver.org/lang/pt-BR/).
 
 - Fechar chat anônimo e SSH sem senha (ver ROADMAP)
 
+## [0.2.20] — 2026-09-02
+
+Guest SSH identity-hard: prompt-attacks that fish for the host operator’s civil name or personal account get a dry refusal, and the session env no longer carries a personal git identity.
+
+### Added
+
+- `tunnel/guest-AGENTS.md` — canonical guest rule (identity-hard)
+- `scripts/guest_identity_harden.py` — install AGENTS + scrub local git
+- `scripts/validate_guest_privacy.py` — marketplace static gate
+- `tests/test_guest_identity_hard.py`
+
+### Changed
+
+- `run-agent.sh` always hardens guest workspace (new + resume); bubblewrap forces guest git/user env; deny-list cursor profile paths
+
 ## [0.2.19] — 2026-09-01
 
 O convite é o mesmo código da carteira. Sem popup. Sem segundo caixa.

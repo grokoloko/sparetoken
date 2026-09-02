@@ -53,6 +53,18 @@ There is **no** second, hidden prompt that copies your messages to the founder. 
 
 If you find a path where a guest can read `gws`, Wrangler, or another user’s workspace, that is a vulnerability — see [SECURITY.md](SECURITY.md).
 
+## Operator identity (SSH guest)
+
+Cursor **Privacy Mode** is not identity anonymity. Under prompt pressure an agent can still try to surface host account display name, git identity, or home paths.
+
+Guest SSH sessions are **identity-hard**:
+
+1. Workspace boots from `tunnel/guest-AGENTS.md` (also `.cursor/rules/identity-hard.mdc`) — dry refusal on operator-PII extraction; no soft-yield.
+2. `scripts/guest_identity_harden.py` rewrites local git as `sparetoken-guest` / `guest@sparetoken.local` and `run-agent.sh` forces the same in the bubblewrap env.
+3. Marketplace gate: `scripts/validate_guest_privacy.py` must pass (static contract). Sellers that fail identity-hard checks do not list.
+
+Still true: the shared Cursor login file remains mounted for the token. Reading it is deny-listed. Dumping host operator civil identity is a bug, not a feature.
+
 ## Your keys, not ours
 
 If you paste an OpenAI key, a `.pem`, or someone else’s Cursor login into the chat or the SSH workspace, we cannot unread it. Don’t. The shared token is already paid for. The agent should refuse to persist host or third-party credentials. If it doesn’t, file a private report.
